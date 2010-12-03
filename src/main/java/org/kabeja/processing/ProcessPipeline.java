@@ -84,10 +84,12 @@ public class ProcessPipeline {
 			while (i.hasNext()) {
 				sc = (SAXFilterConfig) i.next();
 				SAXFilter f = this.manager.getSAXFilter(sc.getFilterName());
-				f.setContentHandler(first);
+				// BUG! f.setContentHandler(first);
+				f.setContentHandler(handler);
 				saxFilterProperties.add(f.getProperties());
 				f.setProperties(sc.getProperties());
-				first = f;
+				// BUG! first = f;
+				handler = f;
 			
 			}
 
