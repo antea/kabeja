@@ -31,7 +31,7 @@ import org.apache.commons.lang.StringUtils;
 public class DXFLayer {
     private Hashtable entities = new Hashtable();
     private String name = StringUtils.EMPTY;
-    private int color = 7;
+    private int color = 0;
     private DXFDocument doc;
     private String ltype = StringUtils.EMPTY;
     private int flags = 0;
