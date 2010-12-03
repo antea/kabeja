@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.zip.GZIPOutputStream;
+import org.apache.commons.lang.StringUtils;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.Locator;
@@ -211,7 +212,7 @@ public class SAXPrettyOutputter extends AbstractSAXSerializer
                 // BUG!! }
                 // BUG!! this.out.write(qname + "=\"" + encodeXML(atts.getValue(i)) +
                 // BUG!!    "\"");
-                if (value != null && !"".equals(value)){
+                if (!StringUtils.isEmpty(value)){
                    this.out.write(qname + "=\"" + encodeXML(value) + "\"");
                 }
             }

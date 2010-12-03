@@ -107,7 +107,7 @@ public class DXFParser implements HandlerManager, Handler, Parser, DXFHandler {
         BufferedReader in = null;
 
         try {
-            if (StringUtils.EMPTY.equals(encoding)) {
+            if (StringUtils.isEmpty(encoding)) {
                 BufferedInputStream buf = new BufferedInputStream(input);
                 buf.mark(9000);
 
