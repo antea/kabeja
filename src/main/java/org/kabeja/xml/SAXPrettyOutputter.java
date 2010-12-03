@@ -206,11 +206,14 @@ public class SAXPrettyOutputter extends AbstractSAXSerializer
                 // + "\" ");
                 // }
                 String value = atts.getValue(i);
-                if(value == null){
-                	value="";
+                // BUG!! if(value == null){
+                // BUG!! 	value="";
+                // BUG!! }
+                // BUG!! this.out.write(qname + "=\"" + encodeXML(atts.getValue(i)) +
+                // BUG!!    "\"");
+                if (value != null && !"".equals(value)){
+                   this.out.write(qname + "=\"" + encodeXML(value) + "\"");
                 }
-                this.out.write(qname + "=\"" + encodeXML(atts.getValue(i)) +
-                    "\"");
             }
         } catch (IOException e) {
             // TODO Auto-generated catch block
