@@ -29,7 +29,7 @@ public class DXFRegionHandler extends AbstractEntityHandler {
     protected static final int DATA = 1;
     protected static final int APPEND_DATA = 3;
     protected DXFRegion region;
-    protected StringBuffer data = new StringBuffer();
+    protected StringBuilder data = new StringBuilder();
 
     /*
      * (non-Javadoc)
@@ -101,7 +101,7 @@ public class DXFRegionHandler extends AbstractEntityHandler {
 
     protected String decodeDATA(String s) {
         char[] c = s.toCharArray();
-        StringBuffer buf = new StringBuffer();
+        StringBuilder buf = new StringBuilder();
 
         for (int i = 0; i < c.length; i++) {
             if (Character.isWhitespace(c[i])) {

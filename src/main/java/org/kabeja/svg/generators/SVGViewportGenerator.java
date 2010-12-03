@@ -82,7 +82,7 @@ public class SVGViewportGenerator extends AbstractSVGSAXGenerator {
                 double w = viewBounds.getWidth() / 2;
                 double h = viewBounds.getHeight() / 2;
                 Point p = viewport.getViewCenterPoint();
-                StringBuffer buf = new StringBuffer();
+                StringBuilder buf = new StringBuilder();
                 buf.append('M');
                 buf.append(' ');
                 buf.append(SVGUtils.formatNumberAttribute((p.getX() - w)));
@@ -127,7 +127,7 @@ public class SVGViewportGenerator extends AbstractSVGSAXGenerator {
                     viewport.getID());
 
                 // the transform
-                StringBuffer buff = new StringBuffer();
+                StringBuilder buff = new StringBuilder();
 
                 buff.append("translate(");
                 buff.append(' ');

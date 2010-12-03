@@ -41,7 +41,7 @@ public class DXFMTextHandler extends AbstractEntityHandler {
     public static final int TEXT_OBLIQUEANGLE = 51;
     public static final int TEXT_ROTATION = 50;
     private DXFMText mtext;
-    private StringBuffer buf = new StringBuffer();
+    private StringBuilder buf = new StringBuilder();
     private int insert = 0;
 
     /**

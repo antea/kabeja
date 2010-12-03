@@ -156,7 +156,7 @@ public class FontImport {
     }
 
     private String fixFileName(String name) {
-        StringBuffer buf = new StringBuffer();
+        StringBuilder buf = new StringBuilder();
         char[] c = name.toCharArray();
 
         for (int i = 0; i < c.length; i++) {

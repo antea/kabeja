@@ -34,7 +34,7 @@ public class SVGSolidGenerator extends AbstractSVGSAXGenerator {
         DXFSolid solid = (DXFSolid) entity;
         AttributesImpl attr = new AttributesImpl();
 
-        StringBuffer points = new StringBuffer();
+        StringBuilder points = new StringBuilder();
 
         // the sequence p1->p2->p4->p3 is defined
         // by the DXF specs

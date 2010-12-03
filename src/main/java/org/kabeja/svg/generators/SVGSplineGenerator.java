@@ -59,7 +59,7 @@ public class SVGSplineGenerator extends AbstractSVGSAXGenerator
         //use Polyline for now 
         DXFSpline spline = (DXFSpline) entity;
         DXFPolyline pline = DXFSplineConverter.toDXFPolyline(spline);
-        StringBuffer d = new StringBuffer();
+        StringBuilder d = new StringBuilder();
 
         DXFVertex last;
         DXFVertex first;
@@ -92,7 +92,7 @@ public class SVGSplineGenerator extends AbstractSVGSAXGenerator
 
     protected String getVertexPath(DXFVertex start, DXFVertex end,
         DXFPolyline pline) {
-        StringBuffer d = new StringBuffer();
+        StringBuilder d = new StringBuilder();
 
         if (start.getBulge() != 0) {
             // from the DXF-Specs.

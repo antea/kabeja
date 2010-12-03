@@ -48,7 +48,7 @@ public class SVGArcGenerator extends AbstractSVGSAXGenerator
 
         Point p;
 
-        StringBuffer path = new StringBuffer();
+        StringBuilder path = new StringBuilder();
 
         p = arc.getStartPoint();
 

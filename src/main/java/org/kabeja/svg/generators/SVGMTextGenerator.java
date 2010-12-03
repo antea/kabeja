@@ -151,7 +151,7 @@ public class SVGMTextGenerator extends AbstractSVGSAXGenerator {
             SVGUtils.formatNumberAttribute(height));
 
         // in order to get the right text-view
-        StringBuffer transform = new StringBuffer();
+        StringBuilder transform = new StringBuilder();
 
         if (!mText.isUpsideDown()) {
             transform.append("matrix(1 0 0 -1 0 ");

@@ -157,7 +157,7 @@ public class SVGHatchGenerator extends AbstractSVGSAXGenerator {
     protected void loopToSVGPath(ContentHandler handler,
         HatchBoundaryLoop loop, SVGSAXGeneratorManager manager)
         throws SAXException {
-        StringBuffer buf = new StringBuffer();
+        StringBuilder buf = new StringBuilder();
         Iterator i = loop.getBoundaryEdgesIterator();
 
         if (i.hasNext()) {
@@ -267,7 +267,7 @@ public class SVGHatchGenerator extends AbstractSVGSAXGenerator {
      */
     protected String convertPatternToSVGPath(Bounds b, DXFHatch hatch,
         HatchLineFamily pattern, double dotlength) {
-        StringBuffer buf = new StringBuffer();
+        StringBuilder buf = new StringBuilder();
 
         Iterator li = new HatchLineIterator(hatch, pattern);
 

@@ -39,7 +39,7 @@ public class SVGDimensionGenerator extends AbstractSVGSAXGenerator {
             DXFBlock block = dimension.getDXFDocument()
                                       .getDXFBlock(dimension.getDimensionBlock());
             AttributesImpl attr = new AttributesImpl();
-            StringBuffer buf = new StringBuffer();
+            StringBuilder buf = new StringBuilder();
 
             buf.append("translate(");
             buf.append((dimension.getInsertPoint().getX()));

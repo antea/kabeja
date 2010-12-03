@@ -40,7 +40,7 @@ public class LinearDimensionOutputter extends AbstractDimensionOutputter {
         throws SAXException {
         if (dim.getDimensionBlock().length() > 0) {
             AttributesImpl attr = new AttributesImpl();
-            StringBuffer buf = new StringBuffer();
+            StringBuilder buf = new StringBuilder();
 
             buf.append("translate(");
             buf.append((dim.getInsertPoint().getX()));

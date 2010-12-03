@@ -203,7 +203,7 @@ public class LayerSelectionAction extends AbstractAction
     }
 
     protected String getDisabledLayersStringList() {
-        StringBuffer buf = new StringBuffer();
+        StringBuilder buf = new StringBuilder();
         Iterator i = disabledLayers.iterator();
 
         while (i.hasNext()) {

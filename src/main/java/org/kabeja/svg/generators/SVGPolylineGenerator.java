@@ -70,7 +70,7 @@ public class SVGPolylineGenerator extends AbstractSVGSAXGenerator
             // handle the different width
             polylinePartToSAX(handler, svgContext, pline);
         } else {
-            StringBuffer d = new StringBuffer();
+            StringBuilder d = new StringBuilder();
             DXFVertex last;
             DXFVertex first;
             Iterator i = pline.getVertexIterator();
@@ -117,7 +117,7 @@ public class SVGPolylineGenerator extends AbstractSVGSAXGenerator
     public String getSVGPath(DXFEntity entity) {
         // create the path
         DXFPolyline pline = (DXFPolyline) entity;
-        StringBuffer d = new StringBuffer();
+        StringBuilder d = new StringBuilder();
 
         DXFVertex last;
         DXFVertex first;
@@ -185,7 +185,7 @@ public class SVGPolylineGenerator extends AbstractSVGSAXGenerator
                 }
             }
 
-            StringBuffer d = new StringBuffer();
+            StringBuilder d = new StringBuilder();
             d.append("M ");
 
             if (segment.isBulged()) {
@@ -332,7 +332,7 @@ public class SVGPolylineGenerator extends AbstractSVGSAXGenerator
         DXFPolyline pline) throws SAXException {
         // TODO we will first use the approximation of the spline
         // and later take e deeper look at SVG-bezier curves /DXF b-splines
-        StringBuffer d = new StringBuffer();
+        StringBuilder d = new StringBuilder();
 
         Iterator i = pline.getVertexIterator();
         DXFVertex last = (DXFVertex) i.next();
@@ -365,7 +365,7 @@ public class SVGPolylineGenerator extends AbstractSVGSAXGenerator
         AttributesImpl attr = new AttributesImpl();
         super.setCommonAttributes(attr, svgContext, pline);
 
-        StringBuffer d = new StringBuffer();
+        StringBuilder d = new StringBuilder();
         d.append("M ");
         d.append(start.getX());
         d.append(SVGConstants.SVG_ATTRIBUTE_PATH_PLACEHOLDER);
@@ -388,7 +388,7 @@ public class SVGPolylineGenerator extends AbstractSVGSAXGenerator
     protected void polyfaceToSAX(ContentHandler handler, Map svgContext,
         DXFPolyline pline) throws SAXException {
         Iterator i = pline.getVertexIterator();
-        StringBuffer buf = new StringBuffer();
+        StringBuilder buf = new StringBuilder();
 
         while (i.hasNext()) {
             DXFVertex v = (DXFVertex) i.next();
@@ -442,7 +442,7 @@ public class SVGPolylineGenerator extends AbstractSVGSAXGenerator
     }
 
     protected void addEdgeToPath(DXFVertex start, DXFVertex end,
-        StringBuffer buf) {
+        StringBuilder buf) {
         buf.append('M');
         buf.append(SVGConstants.SVG_ATTRIBUTE_PATH_PLACEHOLDER);
         buf.append(start.getX());
@@ -463,11 +463,11 @@ public class SVGPolylineGenerator extends AbstractSVGSAXGenerator
     protected void meshToSAX(ContentHandler handler, Map svgContext,
         DXFPolyline pline) throws SAXException {
         // TODO check first the points and put the output together
-        StringBuffer d = new StringBuffer();
+        StringBuilder d = new StringBuilder();
 
         if (pline.isSimpleMesh()) {
             int rows = pline.getRows();
-            d = new StringBuffer();
+            d = new StringBuilder();
 
             Point[][] points = new Point[pline.getRows()][pline.getColumns()];
             Iterator it = pline.getVertexIterator();
@@ -595,7 +595,7 @@ public class SVGPolylineGenerator extends AbstractSVGSAXGenerator
 
     protected String getVertexPath(DXFVertex start, DXFVertex end,
         DXFPolyline pline) {
-        StringBuffer d = new StringBuffer();
+        StringBuilder d = new StringBuilder();
 
         if (start.getBulge() != 0) {
             // from the DXF-Specs.

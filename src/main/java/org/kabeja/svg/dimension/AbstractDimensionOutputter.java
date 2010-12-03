@@ -46,7 +46,7 @@ public abstract class AbstractDimensionOutputter extends AbstractSVGSAXGenerator
             SVGUtils.addAttribute(attr, "x", "" + dim.getTextPoint().getX());
             SVGUtils.addAttribute(attr, "y", "" + dim.getTextPoint().getY());
 
-            StringBuffer transform = new StringBuffer();
+            StringBuilder transform = new StringBuilder();
 
             transform.append("matrix(1 0 0 -1 0 ");
             transform.append(2 * dim.getTextPoint().getY());

@@ -566,7 +566,7 @@ public class JavaScriptShell extends AbstractPostProcessor
     }
 
     protected class JTextAreaPrintWriter extends OutputStream {
-        StringBuffer buf = new StringBuffer();
+        StringBuilder buf = new StringBuilder();
 
         public void write(int b) throws IOException {
             if (b == '\r') {

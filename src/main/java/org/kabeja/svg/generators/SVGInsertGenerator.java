@@ -37,7 +37,7 @@ public class SVGInsertGenerator extends AbstractSVGSAXGenerator {
 
         DXFBlock block = insert.getDXFDocument().getDXFBlock(insert.getBlockID());
 
-        StringBuffer buf = new StringBuffer();
+        StringBuilder buf = new StringBuilder();
 
         Point referencePoint = block.getReferencePoint();
 

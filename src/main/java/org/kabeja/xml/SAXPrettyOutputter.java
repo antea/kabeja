@@ -245,7 +245,7 @@ public class SAXPrettyOutputter extends AbstractSAXSerializer
 
     public static String encodeXML(String text) {
         int length = text.length();
-        StringBuffer work = new StringBuffer(length);
+        StringBuilder work = new StringBuilder(length);
 
         for (int i = 0; i < length; i++) {
             char c = text.charAt(i);

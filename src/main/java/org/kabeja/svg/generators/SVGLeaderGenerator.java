@@ -39,7 +39,7 @@ public class SVGLeaderGenerator extends AbstractSVGSAXGenerator {
 
         if (!leader.isSplinePath()) {
             Iterator i = leader.getCoordinateIterator();
-            StringBuffer buf = new StringBuffer();
+            StringBuilder buf = new StringBuilder();
             buf.append('M');
 
             while (i.hasNext()) {

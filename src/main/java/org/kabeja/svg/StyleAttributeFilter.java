@@ -10,7 +10,7 @@ public class StyleAttributeFilter extends AbstractSAXFilter {
 	public void startElement(String uri, String localName, String name,
 			Attributes atts) throws SAXException {
 		AttributesImpl attributes = new AttributesImpl();
-		StringBuffer buf = new StringBuffer();
+		StringBuilder buf = new StringBuilder();
 		boolean colorFound=false;
 		String color="currentColor";
 		for (int i = 0; i < atts.getLength(); i++) {

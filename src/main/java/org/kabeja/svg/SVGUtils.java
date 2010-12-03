@@ -84,7 +84,7 @@ public class SVGUtils {
             double[] pattern = ltype.getPattern();
 
             if (pattern.length > 0) {
-                StringBuffer buf = new StringBuffer();
+                StringBuilder buf = new StringBuilder();
 
                 for (int i = 0; i < pattern.length; i++) {
                     if (pattern[i] != 0.0) {
@@ -115,7 +115,7 @@ public class SVGUtils {
      */
     public static String validateID(String id) {
         if (id.length() > 0) {
-            StringBuffer buf = new StringBuffer();
+            StringBuilder buf = new StringBuilder();
             char first = id.charAt(0);
 
             if (!Character.isLetter(first) && (first != '_') && (first != ':')) {
@@ -153,10 +153,10 @@ public class SVGUtils {
      */
     public static String reverseID(String id) {
         if (id.length() > 0) {
-            StringBuffer buf = new StringBuffer();
+            StringBuilder buf = new StringBuilder();
             boolean marker = false;
             boolean start = false;
-            StringBuffer number = new StringBuffer();
+            StringBuilder number = new StringBuilder();
 
             for (int i = 0; i < id.length(); i++) {
                 char c = id.charAt(i);
@@ -299,7 +299,7 @@ public class SVGUtils {
     }
 
     public static String fileToURI(File file) {
-        StringBuffer buf = new StringBuffer();
+        StringBuilder buf = new StringBuilder();
 
         try {
             buf.append("file://");
@@ -321,7 +321,7 @@ public class SVGUtils {
     }
 
     public static String pathToURI(String path) {
-        StringBuffer buf = new StringBuffer();
+        StringBuilder buf = new StringBuilder();
 
         char[] c = path.toCharArray();
 

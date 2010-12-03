@@ -125,7 +125,7 @@ public class SVGTextGenerator extends AbstractSVGSAXGenerator {
         }
 
         // in order to get the right text-view
-        StringBuffer transform = new StringBuffer();
+        StringBuilder transform = new StringBuilder();
 
         if (!text.isBackward()) {
             SVGUtils.addAttribute(attr, "writing-mode", "lr-tb");

@@ -52,7 +52,7 @@ public class SVGMLineGenerator extends AbstractSVGSAXGenerator {
 
         if (style.isFilled()) {
             // we create a filled polyline
-            StringBuffer buf = new StringBuffer();
+            StringBuilder buf = new StringBuilder();
             DXFPolyline p1 = pl[0];
             buf.append(gen.getSVGPath(p1));
 

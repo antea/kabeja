@@ -56,7 +56,7 @@ public class SVGEllipseGenerator extends AbstractSVGSAXGenerator
             double angle = ellipse.getRotationAngle();
 
             if (angle != 0.0) {
-                StringBuffer buf = new StringBuffer();
+                StringBuilder buf = new StringBuilder();
                 buf.append("rotate(");
                 buf.append(SVGUtils.formatNumberAttribute(Math.toDegrees(angle)));
                 buf.append(' ');
@@ -80,7 +80,7 @@ public class SVGEllipseGenerator extends AbstractSVGSAXGenerator
     public String getSVGPath(DXFEntity entity) {
         DXFEllipse ellipse = (DXFEllipse) entity;
 
-        StringBuffer buf = new StringBuffer();
+        StringBuilder buf = new StringBuilder();
 
         Point start = ellipse.getPointAt(ellipse.getStartParameter());
         Point end = ellipse.getPointAt(ellipse.getEndParameter());

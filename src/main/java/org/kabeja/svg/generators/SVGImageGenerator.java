@@ -67,7 +67,7 @@ public class SVGImageGenerator extends AbstractSVGSAXGenerator {
             // We have a main transformation on the complete draft.
             // So we need here the rotate of image to get the right
             // view back.
-            StringBuffer transform = new StringBuffer();
+            StringBuilder transform = new StringBuilder();
             transform.append("rotate(180 ");
             transform.append(SVGUtils.formatNumberAttribute((insertPoint.getX() +
                     (imageSizeAlongU / 2))));

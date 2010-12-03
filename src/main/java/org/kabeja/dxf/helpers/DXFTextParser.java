@@ -30,8 +30,8 @@ public class DXFTextParser {
     public static TextDocument parseDXFMText(DXFMText text) {
         // initialize
         TextDocument doc = new TextDocument();
-        StringBuffer buf = new StringBuffer();
-        StringBuffer value = new StringBuffer();
+        StringBuilder buf = new StringBuilder();
+        StringBuilder value = new StringBuilder();
         StyledTextParagraph p = new StyledTextParagraph();
         p.setFontHeight(text.getHeight());
         p.setInsertPoint(text.getInsertPoint());
@@ -368,7 +368,7 @@ public class DXFTextParser {
         TextDocument doc = new TextDocument();
 
         //  boolean asciicontrol = false;
-        StringBuffer buf = new StringBuffer();
+        StringBuilder buf = new StringBuilder();
 
         StyledTextParagraph p = new StyledTextParagraph();
         p.setFontHeight(text.getHeight());
@@ -560,7 +560,7 @@ public class DXFTextParser {
 
     public static String parseSymbols(String text) {
         boolean asciicontrol = false;
-        StringBuffer buf = new StringBuffer();
+        StringBuilder buf = new StringBuilder();
         int marker = 0;
         char c;
 

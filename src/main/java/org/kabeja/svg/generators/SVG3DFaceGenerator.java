@@ -46,7 +46,7 @@ public class SVG3DFaceGenerator extends AbstractSVGSAXGenerator {
                 (face.getFlags() == 0)) {
             AttributesImpl attr = new AttributesImpl();
 
-            StringBuffer points = new StringBuffer();
+            StringBuilder points = new StringBuilder();
 
             Point point1 = face.getPoint1();
 

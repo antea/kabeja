@@ -74,7 +74,7 @@ public class SAXProcessingManagerBuilder implements ContentHandler {
 	private SAXGenerator saxgenerator;
 	private AggregatorGenerator aggregator;
 	private Map properties;
-	private StringBuffer buf = new StringBuffer();
+	private StringBuilder buf = new StringBuilder();
 	private String name;
 	private ProcessPipeline pipeline;
 	private boolean config = false;

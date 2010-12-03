@@ -53,7 +53,7 @@ public class SVGLineGenerator extends AbstractSVGSAXGenerator
         DXFLine line = (DXFLine) entity;
         Point start = line.getStartPoint();
         Point end = line.getEndPoint();
-        StringBuffer buf = new StringBuffer();
+        StringBuilder buf = new StringBuilder();
         buf.append("M ");
         buf.append(SVGUtils.formatNumberAttribute(start.getX()));
         buf.append(SVGConstants.SVG_ATTRIBUTE_PATH_PLACEHOLDER);

@@ -34,7 +34,7 @@ public class TextDocument {
      */
     public String getText() {
         Iterator i = this.paragraphs.iterator();
-        StringBuffer buf = new StringBuffer();
+        StringBuilder buf = new StringBuilder();
 
         while (i.hasNext()) {
             StyledTextParagraph para = (StyledTextParagraph) i.next();

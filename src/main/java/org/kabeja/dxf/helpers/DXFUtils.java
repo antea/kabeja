@@ -15,6 +15,7 @@
  */
 package org.kabeja.dxf.helpers;
 
+import java.awt.geom.Point2D;
 import java.util.ArrayList;
 
 import org.kabeja.dxf.DXFLine;
@@ -138,7 +139,10 @@ public class DXFUtils {
      * @return
      */
     public static boolean equals(Point p1, Point p2, double radius) {
-        return distance(p1, p2) < radius;
+        // return distance(p1, p2) < radius;
+        // PERFORMACE TIP
+        // 35M calls: 7.500msec -> 2.980ms
+        return Point2D.distance(p1.getX(), p1.getY(), p2.getX(), p2.getY()) < radius;
 
         // if (Math.abs(p1.getX() - p2.getX()) <= radius
         // && Math.abs(p1.getY() - p2.getY()) <= radius)
