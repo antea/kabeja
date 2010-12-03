@@ -15,6 +15,7 @@
 */
 package org.kabeja.svg.generators;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.kabeja.dxf.DXFStyle;
@@ -27,6 +28,16 @@ import org.xml.sax.helpers.AttributesImpl;
 
 
 public class SVGStyleGenerator {
+    private static Map<String, String> replaceTable = new HashMap<String, String>();
+
+    public static void addReplacement(String from, String to) {
+        replaceTable.put(from, to);
+    }
+
+    public static void clearReplacements() {
+        replaceTable.clear();
+    }
+
     /*
     * (non-Javadoc)
     *
@@ -40,6 +51,13 @@ public class SVGStyleGenerator {
             generateSAXFontDescription(handler, style.getBigFontFile());
         } else if (manager.hasFontDescription(style.getFontFile())) {
             generateSAXFontDescription(handler, style.getFontFile());
+        } else if (replaceTable.containsKey(style.getFontFile())
+                && manager.hasFontDescription(replaceTable.get(style.getFontFile()))) {
+            String font = replaceTable.get(style.getFontFile());
+            generateSAXFontDescription(handler, font);
+            System.err.println("Rimpiazzato font " + style.getFontFile() +" con " + font);
+        } else {
+            System.err.println("Font non trovato: " + style.getBigFontFile() + "/" + style.getFontFile());
         }
     }
 
