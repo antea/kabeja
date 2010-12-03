@@ -100,9 +100,14 @@ public class SVGInsertGenerator extends AbstractSVGSAXGenerator {
                         svgContext.containsKey(SVGContext.LAYER_STROKE_WIDTH)) {
                     Double lw = (Double) svgContext.get(SVGContext.LAYER_STROKE_WIDTH);
                     double width = (lw.doubleValue() * 2) / (scale_x + scale_y);
-                    SVGUtils.addAttribute(attr,
-                        SVGConstants.SVG_ATTRIBUTE_STROKE_WITDH,
-                        SVGUtils.formatNumberAttribute(width));
+                    String value = SVGUtils.formatNumberAttribute(width);
+                    int index = attr.getIndex(SVGConstants.SVG_ATTRIBUTE_STROKE_WITDH);
+                    if (index == -1) {
+                        SVGUtils.addAttribute(attr,
+                                SVGConstants.SVG_ATTRIBUTE_STROKE_WITDH, value);
+                    } else {
+                        attr.setValue(index, value);
+                    }
                 }
 
                 // SVGUtils.startElement(handler, SVGConstants.SVG_GROUP, attr);
