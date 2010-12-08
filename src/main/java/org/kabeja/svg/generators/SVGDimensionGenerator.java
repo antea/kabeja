@@ -74,9 +74,9 @@ public class SVGDimensionGenerator extends AbstractSVGSAXGenerator {
             attr = new AttributesImpl();
 
             attr.addAttribute(SVGConstants.XMLNS_NAMESPACE, "xlink",
-                "xmlns:xlink", "CDATA", SVGConstants.XLINK_NAMESPACE);
+                SVGConstants.XMLNS_XLINK, SVGUtils.DEFAUL_ATTRIBUTE_TYPE, SVGConstants.XLINK_NAMESPACE);
             attr.addAttribute(SVGConstants.XLINK_NAMESPACE, "href",
-                "xlink:href", "CDATA",
+                SVGConstants.XLINK_HREF, SVGUtils.DEFAUL_ATTRIBUTE_TYPE,
                 "#" + SVGUtils.validateID(dimension.getDimensionBlock()));
 
             SVGUtils.emptyElement(handler, SVGConstants.SVG_USE, attr);

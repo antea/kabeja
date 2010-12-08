@@ -113,7 +113,7 @@ public class SVGViewportGenerator extends AbstractSVGSAXGenerator {
                 SVGUtils.addAttribute(attr, SVGConstants.SVG_ATTRIBUTE_VIEWBOX,
                     buf.toString());
 
-                SVGUtils.addAttribute(attr, "d", buf.toString());
+                SVGUtils.addAttribute(attr, SVGConstants.SVG_ATTRIBUTE_PATH, buf.toString());
                 SVGUtils.emptyElement(handler, SVGConstants.SVG_PATH, attr);
 
                 SVGUtils.endElement(handler, SVGConstants.SVG_CLIPPING_PATH);

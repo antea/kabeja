@@ -188,7 +188,7 @@ public class SVGHatchGenerator extends AbstractSVGSAXGenerator {
             // every loop as single path
             if (d.length() > 0) {
                 AttributesImpl attr = new AttributesImpl();
-                SVGUtils.addAttribute(attr, "d", buf.toString());
+                SVGUtils.addAttribute(attr, SVGConstants.SVG_ATTRIBUTE_PATH, buf.toString());
                 SVGUtils.emptyElement(handler, SVGConstants.SVG_PATH, attr);
             }
         }
@@ -247,7 +247,7 @@ public class SVGHatchGenerator extends AbstractSVGSAXGenerator {
                     SVGUtils.formatNumberAttribute(lw.doubleValue()));
             }
 
-            SVGUtils.addAttribute(attr, "d",
+            SVGUtils.addAttribute(attr, SVGConstants.SVG_ATTRIBUTE_PATH,
                 convertPatternToSVGPath(hatchBounds, hatch, pattern, dotLength));
 
             SVGUtils.emptyElement(handler, SVGConstants.SVG_PATH, attr);

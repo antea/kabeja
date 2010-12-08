@@ -59,9 +59,9 @@ public class SVGImageGenerator extends AbstractSVGSAXGenerator {
 
             // convert the file to uri
             attr.addAttribute(SVGConstants.XMLNS_NAMESPACE, "xlink",
-                "xmlns:xlink", "CDATA", SVGConstants.XLINK_NAMESPACE);
+                SVGConstants.XMLNS_XLINK, SVGUtils.DEFAUL_ATTRIBUTE_TYPE, SVGConstants.XLINK_NAMESPACE);
             attr.addAttribute(SVGConstants.XLINK_NAMESPACE, "href",
-                "xlink:href", "CDATA",
+                SVGConstants.XLINK_HREF, SVGUtils.DEFAUL_ATTRIBUTE_TYPE,
                 SVGUtils.pathToURI(imageDef.getFilename()));
 
             // We have a main transformation on the complete draft.

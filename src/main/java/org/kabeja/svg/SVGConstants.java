@@ -95,4 +95,6 @@ public class SVGConstants {
     public static final String SVGEVENT_MOUSEMOVE = "mousemove";
     public static final String SVGEVENT_MOUSEUP = "mouseup";
     public static final String SVGEVENT_CLICK = "click";
+    public static final String XLINK_HREF = "xlink:href";
+    public static final String XMLNS_XLINK = "xmlns:xlink";
 }

@@ -57,7 +57,7 @@ public class SVGLeaderGenerator extends AbstractSVGSAXGenerator {
 
             AttributesImpl attr = new AttributesImpl();
             super.setCommonAttributes(attr, svgContext, leader);
-            SVGUtils.addAttribute(attr, "d", buf.toString());
+            SVGUtils.addAttribute(attr, SVGConstants.SVG_ATTRIBUTE_PATH, buf.toString());
             SVGUtils.emptyElement(handler, SVGConstants.SVG_PATH, attr);
 
             //the used DIMSTYLE
@@ -93,11 +93,11 @@ public class SVGLeaderGenerator extends AbstractSVGSAXGenerator {
                                 SVGConstants.SVG_GROUP, attr);
                             attr = new AttributesImpl();
                             attr.addAttribute(SVGConstants.XMLNS_NAMESPACE,
-                                "xlink", "xmlns:xlink", "CDATA",
+                                "xlink", SVGConstants.XMLNS_XLINK, SVGUtils.DEFAUL_ATTRIBUTE_TYPE,
                                 SVGConstants.XLINK_NAMESPACE);
 
                             attr.addAttribute(SVGConstants.XLINK_NAMESPACE,
-                                "href", "xlink:href", "CDATA",
+                                "href", SVGConstants.XLINK_HREF, SVGUtils.DEFAUL_ATTRIBUTE_TYPE,
                                 "#" + SVGUtils.validateID(blockID));
 
                             SVGUtils.emptyElement(handler,

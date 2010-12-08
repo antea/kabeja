@@ -72,7 +72,7 @@ public class SVGEllipseGenerator extends AbstractSVGSAXGenerator
             // SVGUtils.addAttribute(attr, "fill", "none");
             SVGUtils.emptyElement(handler, SVGConstants.SVG_ELLIPSE, attr);
         } else {
-            SVGUtils.addAttribute(attr, "d", getSVGPath(ellipse));
+            SVGUtils.addAttribute(attr, SVGConstants.SVG_ATTRIBUTE_PATH, getSVGPath(ellipse));
             SVGUtils.emptyElement(handler, SVGConstants.SVG_PATH, attr);
         }
     }

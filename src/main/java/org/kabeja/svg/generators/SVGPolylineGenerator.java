@@ -96,7 +96,7 @@ public class SVGPolylineGenerator extends AbstractSVGSAXGenerator
                 d.append(" z");
             }
 
-            SVGUtils.addAttribute(attr, "d", d.toString());
+            SVGUtils.addAttribute(attr, SVGConstants.SVG_ATTRIBUTE_PATH, d.toString());
             super.setCommonAttributes(attr, svgContext, pline);
 
             if (pline.getStartWidth() > 0.0) {
@@ -312,7 +312,7 @@ public class SVGPolylineGenerator extends AbstractSVGSAXGenerator
                 SVGUtils.addAttribute(attr, "fill", "currentColor");
             }
 
-            SVGUtils.addAttribute(attr, "d", d.toString());
+            SVGUtils.addAttribute(attr, SVGConstants.SVG_ATTRIBUTE_PATH, d.toString());
 
             // output now
             SVGUtils.emptyElement(handler, SVGConstants.SVG_PATH, attr);
@@ -353,7 +353,7 @@ public class SVGPolylineGenerator extends AbstractSVGSAXGenerator
         AttributesImpl attr = new AttributesImpl();
         super.setCommonAttributes(attr, svgContext, pline);
 
-        SVGUtils.addAttribute(attr, "d", d.toString());
+        SVGUtils.addAttribute(attr, SVGConstants.SVG_ATTRIBUTE_PATH, d.toString());
 
         // output now
         SVGUtils.emptyElement(handler, SVGConstants.SVG_PATH, attr);
@@ -374,7 +374,7 @@ public class SVGPolylineGenerator extends AbstractSVGSAXGenerator
 
         d.append(getVertexPath(start, end, pline));
 
-        SVGUtils.addAttribute(attr, "d", d.toString());
+        SVGUtils.addAttribute(attr, SVGConstants.SVG_ATTRIBUTE_PATH, d.toString());
 
         if (start.getStartWidth() > 0.0) {
             SVGUtils.addAttribute(attr,
@@ -424,7 +424,7 @@ public class SVGPolylineGenerator extends AbstractSVGSAXGenerator
 
                 if (buf.length() > 0) {
                     AttributesImpl attr = new AttributesImpl();
-                    SVGUtils.addAttribute(attr, "d", buf.toString());
+                    SVGUtils.addAttribute(attr, SVGConstants.SVG_ATTRIBUTE_PATH, buf.toString());
                     super.setCommonAttributes(attr, svgContext, v);
                     // fillmode ????????
                     SVGUtils.emptyElement(handler, SVGConstants.SVG_PATH, attr);
@@ -435,7 +435,7 @@ public class SVGPolylineGenerator extends AbstractSVGSAXGenerator
 
         if (buf.length() > 0) {
             AttributesImpl attr = new AttributesImpl();
-            SVGUtils.addAttribute(attr, "d", buf.toString());
+            SVGUtils.addAttribute(attr, SVGConstants.SVG_ATTRIBUTE_PATH, buf.toString());
             super.setCommonAttributes(attr, svgContext, pline);
             SVGUtils.emptyElement(handler, SVGConstants.SVG_PATH, attr);
         }
@@ -588,7 +588,7 @@ public class SVGPolylineGenerator extends AbstractSVGSAXGenerator
         }
 
         AttributesImpl attr = new AttributesImpl();
-        SVGUtils.addAttribute(attr, "d", d.toString());
+        SVGUtils.addAttribute(attr, SVGConstants.SVG_ATTRIBUTE_PATH, d.toString());
         super.setCommonAttributes(attr, svgContext, pline);
         SVGUtils.emptyElement(handler, SVGConstants.SVG_PATH, attr);
     }

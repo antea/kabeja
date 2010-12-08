@@ -80,10 +80,10 @@ public class SVGStyleGenerator {
 
         String url = FontManager.getInstance().getFontDescription(font) + "#" +
             font;
-        attr.addAttribute("", "", "xmlns:xlink", "CDATA",
-            SVGConstants.XLINK_NAMESPACE);
-        attr.addAttribute(SVGConstants.XLINK_NAMESPACE, "href", "xlink:href",
-            "CDATA", url);
+        attr.addAttribute("", "", SVGConstants.XMLNS_XLINK,
+            SVGUtils.DEFAUL_ATTRIBUTE_TYPE, SVGConstants.XLINK_NAMESPACE);
+        attr.addAttribute(SVGConstants.XLINK_NAMESPACE, "href", SVGConstants.XLINK_HREF,
+            SVGUtils.DEFAUL_ATTRIBUTE_TYPE, url);
         SVGUtils.emptyElement(handler, SVGConstants.SVG_FONT_FACE_URI, attr);
         SVGUtils.endElement(handler, SVGConstants.SVG_FONT_FACE_SRC);
         SVGUtils.endElement(handler, SVGConstants.SVG_FONT_FACE);

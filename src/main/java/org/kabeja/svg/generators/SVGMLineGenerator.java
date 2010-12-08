@@ -71,7 +71,7 @@ public class SVGMLineGenerator extends AbstractSVGSAXGenerator {
             buf.append(" z");
 
             AttributesImpl atts = new AttributesImpl();
-            SVGUtils.addAttribute(atts, "d", buf.toString());
+            SVGUtils.addAttribute(atts, SVGConstants.SVG_ATTRIBUTE_PATH, buf.toString());
             SVGUtils.addAttribute(atts, SVGConstants.SVG_ATTRIBUTE_STROKE,
                 "none");
             SVGUtils.addAttribute(atts, SVGConstants.SVG_ATTRIBUTE_FILL,

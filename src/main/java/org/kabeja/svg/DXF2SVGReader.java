@@ -342,12 +342,13 @@ public class DXF2SVGReader extends XMLFilterImpl {
             AttributesImpl attributes = new AttributesImpl(atts);
 
             if (atts.getIndex("xmlns") == -1) {
-                attributes.addAttribute("", "xmlns", "xmlns", "CDATA",
-                    SVGConstants.SVG_NAMESPACE);
+                attributes.addAttribute("", "xmlns", "xmlns", SVGUtils.DEFAUL_ATTRIBUTE_TYPE,
+                     SVGConstants.SVG_NAMESPACE);
             }
 
             if (atts.getIndex("xmlns:xlink") == -1) {
-                attributes.addAttribute("", "", "xmlns:xlink", "CDATA",
+                attributes.addAttribute("", "", 
+                    SVGConstants.XMLNS_XLINK, SVGUtils.DEFAUL_ATTRIBUTE_TYPE,
                     SVGConstants.XLINK_NAMESPACE);
             }
 
