@@ -27,7 +27,6 @@ import org.xml.sax.helpers.AttributesImpl;
 public class FixedStrokeWidthFilter extends AbstractSAXFilter {
     public final static String PROPERTY_FIXED_FONTSIZE = "fixed-fontsize";
     public final static String PERCENT = "%";
-    protected int strokeWidth = 1;
     protected double strokeBase = 0;
     protected boolean replace = true;
     protected boolean fixFontsize = true;
