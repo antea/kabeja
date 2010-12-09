@@ -54,6 +54,7 @@ import org.apache.batik.transcoder.image.JPEGTranscoder;
 import org.w3c.dom.svg.SVGDocument;
 
 import de.miethxml.toolkit.ui.SmallShadowBorder;
+import org.apache.commons.lang.StringUtils;
 
 
 /**
@@ -221,7 +222,7 @@ public class SVGViewer {
                 }
 
                 public void gvtRenderingCompleted(GVTTreeRendererEvent e) {
-                    infoLabel.setText("");
+                    infoLabel.setText(StringUtils.EMPTY);
                     cards.show(parentPanel, "view");
                 }
             });

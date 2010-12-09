@@ -167,8 +167,8 @@ public class SVGTextGenerator extends AbstractSVGSAXGenerator {
 
         SVGUtils.addAttribute(attr, "transform", transform.toString());
 
-        SVGUtils.addAttribute(attr, "x", "" + alignmentPoint.getX());
-        SVGUtils.addAttribute(attr, "y", "" + alignmentPoint.getY());
+        SVGUtils.addAttribute(attr, "x", alignmentPoint.getX());
+        SVGUtils.addAttribute(attr, "y", alignmentPoint.getY());
 
         SVGUtils.addAttribute(attr, "fill", "currentColor");
         super.setCommonAttributes(attr, svgContext, text);

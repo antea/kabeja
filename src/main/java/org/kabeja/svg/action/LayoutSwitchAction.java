@@ -31,6 +31,7 @@ import org.kabeja.svg.ui.PopUpButton;
 import org.kabeja.ui.impl.AbstractPropertiesEditor;
 
 import de.miethxml.toolkit.ui.UIUtils;
+import org.apache.commons.lang.StringUtils;
 
 
 public class LayoutSwitchAction extends AbstractPropertiesEditor
@@ -85,7 +86,7 @@ public class LayoutSwitchAction extends AbstractPropertiesEditor
                         this.getClass(), "/icons/layout_ps_l.png")));
             group.add(item);
             menu.add(item);
-            this.button = new PopUpButton(menu, "");
+            this.button = new PopUpButton(menu, StringUtils.EMPTY);
             this.defaultItem.setSelected(true);
         }
 

@@ -17,6 +17,7 @@ package org.kabeja.dxf;
 
 import java.util.Hashtable;
 import java.util.Iterator;
+import org.apache.commons.lang.StringUtils;
 
 
 /**
@@ -27,7 +28,7 @@ import java.util.Iterator;
  */
 public class DXFVariable {
     private Hashtable values = new Hashtable();
-    private String name = "";
+    private String name = StringUtils.EMPTY;
 
     public DXFVariable(String name) {
         this.name = name;

@@ -61,6 +61,7 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.svg.SVGDocument;
 
 import de.miethxml.toolkit.ui.UIUtils;
+import org.apache.commons.lang.StringUtils;
 
 
 public class LayerSelectionAction extends AbstractAction
@@ -230,7 +231,7 @@ public class LayerSelectionAction extends AbstractAction
                 return "Layer";
 
             default:
-                return "" + column;
+                return StringUtils.EMPTY + column;
             }
         }
 

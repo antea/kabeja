@@ -21,6 +21,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import org.apache.commons.lang.StringUtils;
 
 import org.kabeja.dxf.DXFDocument;
 import org.kabeja.processing.helper.MergeMap;
@@ -44,7 +45,7 @@ public class ProcessPipeline {
 	private Map generatorProperties = new HashMap();
 	private SAXSerializer serializer;
 	private String name;
-	private String description = "";
+	private String description = StringUtils.EMPTY;
 
 	public void process(DXFDocument doc, Map context, OutputStream out)
 			throws ProcessorException {

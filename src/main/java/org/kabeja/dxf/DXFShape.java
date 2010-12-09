@@ -16,6 +16,7 @@
 package org.kabeja.dxf;
 
 import java.util.Map;
+import org.apache.commons.lang.StringUtils;
 
 import org.kabeja.dxf.helpers.Point;
 import org.kabeja.math.TransformContext;
@@ -33,7 +34,7 @@ public class DXFShape extends DXFEntity {
     protected double height = 0.0;
     protected double scaleFactor = 1.0;
     protected double obliqueAngle = 0.0;
-    protected String name = "";
+    protected String name = StringUtils.EMPTY;
 
     /* (non-Javadoc)
      * @see org.kabeja.dxf.DXFEntity#toSAX(org.xml.sax.ContentHandler, java.util.Map)

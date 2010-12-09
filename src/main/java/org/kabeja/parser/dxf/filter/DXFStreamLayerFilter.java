@@ -21,6 +21,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.StringTokenizer;
+import org.apache.commons.lang.StringUtils;
 
 import org.kabeja.parser.DXFValue;
 import org.kabeja.parser.ParseException;
@@ -33,7 +34,7 @@ public class DXFStreamLayerFilter extends DXFStreamEntityFilter {
     protected List parseValues = new ArrayList();
     protected Set exclude = new HashSet();
     protected Set include = new HashSet();
-    protected String layer = "";
+    protected String layer = StringUtils.EMPTY;
     boolean findLayer = true;
 
     public void setProperties(Map properties) {

@@ -36,7 +36,7 @@ public class SVGPointGenerator extends AbstractSVGSAXGenerator {
             SVGUtils.formatNumberAttribute(point.getX()));
         SVGUtils.addAttribute(attr, "cy",
             SVGUtils.formatNumberAttribute(point.getY()));
-        SVGUtils.addAttribute(attr, "r", "" + 0.001);
+        SVGUtils.addAttribute(attr, "r", 0.001);
         super.setCommonAttributes(attr, svgContext, point);
         SVGUtils.emptyElement(handler, SVGConstants.SVG_CIRCLE, attr);
     }

@@ -137,8 +137,8 @@ public class SVGMTextGenerator extends AbstractSVGSAXGenerator {
             }
         }
 
-        SVGUtils.addAttribute(attr, "x", "" + alignmentPoint.getX());
-        SVGUtils.addAttribute(attr, "y", "" + alignmentPoint.getY());
+        SVGUtils.addAttribute(attr, "x", alignmentPoint.getX());
+        SVGUtils.addAttribute(attr, "y", alignmentPoint.getY());
 
         // given text-entity-height
         double height = mText.getHeight();
@@ -187,7 +187,7 @@ public class SVGMTextGenerator extends AbstractSVGSAXGenerator {
 
         if (mText.getReferenceWidth() > 0.0) {
             SVGUtils.addAttribute(attr, SVGConstants.SVG_ATTRIBUTE_TEXT_LENGTH,
-                "" + mText.getReferenceWidth());
+                mText.getReferenceWidth());
         }
 
         SVGUtils.addAttribute(attr, "fill", "currentColor");

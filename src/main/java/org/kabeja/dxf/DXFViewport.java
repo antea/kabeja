@@ -18,6 +18,7 @@ package org.kabeja.dxf;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
+import org.apache.commons.lang.StringUtils;
 
 import org.kabeja.dxf.helpers.Point;
 import org.kabeja.dxf.helpers.Vector;
@@ -30,8 +31,8 @@ import org.kabeja.math.ParametricPlane;
  *
  */
 public class DXFViewport extends DXFEntity {
-    private String viewportID = "";
-    private String plotStyleName = "";
+    private String viewportID = StringUtils.EMPTY;
+    private String plotStyleName = StringUtils.EMPTY;
     private Point lowerLeftCorner = new Point();
     private Point upperRightCorner = new Point();
     private Point centerPoint = new Point();

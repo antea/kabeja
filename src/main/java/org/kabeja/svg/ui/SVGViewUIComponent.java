@@ -51,6 +51,7 @@ import org.apache.batik.swing.svg.GVTTreeBuilderAdapter;
 import org.apache.batik.swing.svg.GVTTreeBuilderEvent;
 import org.apache.batik.swing.svg.SVGDocumentLoaderAdapter;
 import org.apache.batik.swing.svg.SVGDocumentLoaderEvent;
+import org.apache.commons.lang.StringUtils;
 import org.kabeja.dxf.DXFDocument;
 import org.kabeja.svg.SVGGenerator;
 import org.kabeja.svg.action.CanvasUpdateRunnable;
@@ -177,7 +178,7 @@ public class SVGViewUIComponent implements DXFDocumentViewComponent,
                     }
 
                     public void gvtRenderingCompleted(GVTTreeRendererEvent e) {
-                        infoLabel.setText("");
+                        infoLabel.setText(StringUtils.EMPTY);
                         cards.show(panel, "view");
                     }
                 });
@@ -316,7 +317,7 @@ public class SVGViewUIComponent implements DXFDocumentViewComponent,
                         group.addUnSelector(button);
                     }
 
-                    button.setText("");
+                    button.setText(StringUtils.EMPTY);
                     button.addItemListener((ItemListener) action);
                     this.toolbar.add(button);
                 } else {

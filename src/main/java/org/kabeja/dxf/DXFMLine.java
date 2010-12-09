@@ -17,6 +17,7 @@ package org.kabeja.dxf;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.commons.lang.StringUtils;
 
 import org.kabeja.dxf.helpers.DXFMLineSegment;
 import org.kabeja.dxf.helpers.MLineConverter;
@@ -36,8 +37,8 @@ public class DXFMLine extends DXFEntity {
     protected List mlineSegments = new ArrayList();
     protected int lineCount = 0;
     protected int justification = 0;
-    protected String mLineStyleID = "";
-    protected String mLineStyleName = "";
+    protected String mLineStyleID = StringUtils.EMPTY;
+    protected String mLineStyleName = StringUtils.EMPTY;
 
     /*
      * (non-Javadoc)

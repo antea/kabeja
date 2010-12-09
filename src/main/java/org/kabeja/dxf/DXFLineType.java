@@ -15,6 +15,8 @@
 */
 package org.kabeja.dxf;
 
+import org.apache.commons.lang.StringUtils;
+
 
 /**
  * @author <a href="mailto:simon.mieth@gmx.de>Simon Mieth</a>
@@ -23,8 +25,8 @@ package org.kabeja.dxf;
  *
  */
 public class DXFLineType {
-    private String name = "";
-    private String descritpion = "";
+    private String name = StringUtils.EMPTY;
+    private String descritpion = StringUtils.EMPTY;
     private double totalPatternLength = 0.0;
     private double[] pattern;
     private int elementCount = 0;

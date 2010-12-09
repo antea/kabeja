@@ -46,10 +46,10 @@ public class SVGRayGenerator extends AbstractSVGSAXGenerator {
                 ray.getDirection(), t);
 
         AttributesImpl atts = new AttributesImpl();
-        SVGUtils.addAttribute(atts, "x1", "" + ray.getBasePoint().getX());
-        SVGUtils.addAttribute(atts, "y1", "" + ray.getBasePoint().getY());
-        SVGUtils.addAttribute(atts, "x2", "" + end.getX());
-        SVGUtils.addAttribute(atts, "y2", "" + end.getY());
+        SVGUtils.addAttribute(atts, "x1", ray.getBasePoint().getX());
+        SVGUtils.addAttribute(atts, "y1", ray.getBasePoint().getY());
+        SVGUtils.addAttribute(atts, "x2", end.getX());
+        SVGUtils.addAttribute(atts, "y2", end.getY());
         super.setCommonAttributes(atts, svgContext, ray);
 
         SVGUtils.emptyElement(handler, SVGConstants.SVG_LINE, atts);

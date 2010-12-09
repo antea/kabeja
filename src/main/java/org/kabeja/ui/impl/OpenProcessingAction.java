@@ -22,13 +22,14 @@ import java.io.FileNotFoundException;
 
 import javax.swing.AbstractAction;
 import javax.swing.JFileChooser;
+import org.apache.commons.lang.StringUtils;
 
 import org.kabeja.processing.ProcessingManager;
 import org.kabeja.tools.SAXProcessingManagerBuilder;
 
 
 public class OpenProcessingAction extends AbstractAction {
-    protected String baseDir = "";
+    protected String baseDir = StringUtils.EMPTY;
     protected ServiceContainer container;
 
     public OpenProcessingAction(ServiceContainer container) {

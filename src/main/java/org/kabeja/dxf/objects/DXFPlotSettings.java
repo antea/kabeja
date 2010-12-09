@@ -15,17 +15,18 @@
 */
 package org.kabeja.dxf.objects;
 
+import org.apache.commons.lang.StringUtils;
 import org.kabeja.dxf.Bounds;
 import org.kabeja.dxf.DXFConstants;
 import org.kabeja.dxf.helpers.Point;
 
 
 public class DXFPlotSettings extends DXFObject {
-    protected String name = "";
-    protected String configName = "";
-    protected String canonicalMediaName = "";
-    protected String plotViewName = "";
-    protected String currentStylesheet = "";
+    protected String name = StringUtils.EMPTY;
+    protected String configName = StringUtils.EMPTY;
+    protected String canonicalMediaName = StringUtils.EMPTY;
+    protected String plotViewName = StringUtils.EMPTY;
+    protected String currentStylesheet = StringUtils.EMPTY;
 
     /**
      * The margins stored [top,right,bottom,left]

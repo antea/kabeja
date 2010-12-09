@@ -17,6 +17,7 @@ package org.kabeja.tools;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import org.apache.commons.lang.StringUtils;
 
 import org.kabeja.dxf.DXFConstants;
 
@@ -32,7 +33,7 @@ public class CodePageParser {
     private static final String javaPrefix = "Cp";
 
     public String parseEncoding(BufferedReader reader) {
-        String encoding = "";
+        String encoding = StringUtils.EMPTY;
 
         try {
             String line = null;

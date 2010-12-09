@@ -15,6 +15,7 @@
  */
 package org.kabeja.dxf;
 
+import org.apache.commons.lang.StringUtils;
 import org.kabeja.dxf.helpers.DXFTextParser;
 import org.kabeja.dxf.helpers.Point;
 import org.kabeja.dxf.helpers.TextDocument;
@@ -49,8 +50,8 @@ public class DXFText extends DXFEntity {
 
     // the vertical align
     protected int valign = 0;
-    protected String text = "";
-    protected String textStyle = "";
+    protected String text = StringUtils.EMPTY;
+    protected String textStyle = StringUtils.EMPTY;
     protected Point p;
     protected Point align_p1;
     protected Point align_p2;

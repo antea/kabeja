@@ -18,6 +18,7 @@ package org.kabeja.dxf;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import org.apache.commons.lang.StringUtils;
 
 import org.kabeja.dxf.helpers.HatchBoundaryLoop;
 import org.kabeja.dxf.helpers.Point;
@@ -28,7 +29,7 @@ import org.kabeja.dxf.helpers.Point;
  *
  */
 public class DXFHatch extends DXFEntity {
-    private String name = "";
+    private String name = StringUtils.EMPTY;
     private boolean solid = false;
     private int associativityFlag = 0;
     private int boundaryPathCount = 0;
@@ -47,7 +48,7 @@ public class DXFHatch extends DXFEntity {
     private Point elevationPoint = new Point();
     private List boundaries = new ArrayList();
     private List patterns = new ArrayList();
-    private String patternID = "";
+    private String patternID = StringUtils.EMPTY;
     private double patternScale;
 
     public DXFHatch() {

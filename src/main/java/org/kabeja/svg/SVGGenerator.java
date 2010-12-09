@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.StringTokenizer;
+import org.apache.commons.lang.StringUtils;
 
 import org.kabeja.dxf.Bounds;
 import org.kabeja.dxf.DXFBlock;
@@ -119,7 +120,7 @@ public class SVGGenerator extends AbstractSAXGenerator {
             this.context.put(SVGContext.STROKE_WIDTH,
                 this.properties.get(PROPERTY_STROKE_WIDTH));
             // set to ignore the draft stroke width
-            this.context.put(SVGContext.STROKE_WIDTH_IGNORE, "");
+            this.context.put(SVGContext.STROKE_WIDTH_IGNORE, StringUtils.EMPTY);
         }
 
         if (this.properties.containsKey(PROPERTY_DOCUMENT_BOUNDS_RULE)) {
@@ -178,7 +179,7 @@ public class SVGGenerator extends AbstractSAXGenerator {
 
             AttributesImpl attr = new AttributesImpl();
 
-            String viewport = "";
+            String viewport = StringUtils.EMPTY;
             Bounds bounds = this.getBounds();
 
             // set the height and width from properties or layout settings
@@ -206,7 +207,7 @@ public class SVGGenerator extends AbstractSAXGenerator {
                         Bounds paper = layout.getLimits();
 
                         // get the units of the paper
-                        String units = "";
+                        String units = StringUtils.EMPTY;
 
                         switch (layout.getPaperUnit()) {
                         case DXFConstants.PAPER_UNIT_INCH:
@@ -229,10 +230,10 @@ public class SVGGenerator extends AbstractSAXGenerator {
                                 (paper.getHeight() > 0)) {
                             SVGUtils.addAttribute(attr,
                                 SVGConstants.SVG_ATTRIBUTE_HEIGHT,
-                                "" + paper.getHeight() + units);
+                                paper.getHeight() + units);
                             SVGUtils.addAttribute(attr,
                                 SVGConstants.SVG_ATTRIBUTE_WIDTH,
-                                "" + paper.getWidth() + units);
+                                paper.getWidth() + units);
                         }
 
                         // check for the bounds
@@ -323,7 +324,7 @@ public class SVGGenerator extends AbstractSAXGenerator {
                 // the user has setup a stroke-width
                 SVGUtils.addAttribute(attr,
                     SVGConstants.SVG_ATTRIBUTE_STROKE_WITDH,
-                    "" + this.context.get(SVGContext.STROKE_WIDTH));
+                    this.context.get(SVGContext.STROKE_WIDTH).toString());
             } else {
                 double sw = (bounds.getWidth() + bounds.getHeight()) / 2 * SVGConstants.DEFAULT_STROKE_WIDTH_PERCENT;
                 double defaultSW = ((double) DXFConstants.ENVIRONMENT_VARIABLE_LWDEFAULT) / 100.0;

@@ -17,6 +17,7 @@ package org.kabeja.dxf.helpers;
 
 import java.util.Stack;
 import java.util.StringTokenizer;
+import org.apache.commons.lang.StringUtils;
 
 import org.kabeja.dxf.DXFMText;
 import org.kabeja.dxf.DXFText;
@@ -624,7 +625,7 @@ public class DXFTextParser {
                     default:
 
                         if (Character.isDigit(c) && ((i + 2) < text.length())) {
-                            String code = "" + c + text.charAt(i + 1) +
+                            String code = StringUtils.EMPTY + c + text.charAt(i + 1) +
                                 text.charAt(i + 2);
 
                             try {

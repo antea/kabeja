@@ -48,10 +48,10 @@ public class SVGXLineGenerator extends AbstractSVGSAXGenerator {
                 xline.getDirection(), (-1 * t));
 
         AttributesImpl atts = new AttributesImpl();
-        SVGUtils.addAttribute(atts, "x1", "" + start.getX());
-        SVGUtils.addAttribute(atts, "y1", "" + start.getY());
-        SVGUtils.addAttribute(atts, "x2", "" + end.getX());
-        SVGUtils.addAttribute(atts, "y2", "" + end.getY());
+        SVGUtils.addAttribute(atts, "x1", start.getX());
+        SVGUtils.addAttribute(atts, "y1", start.getY());
+        SVGUtils.addAttribute(atts, "x2", end.getX());
+        SVGUtils.addAttribute(atts, "y2", end.getY());
         super.setCommonAttributes(atts, svgContext, xline);
 
         SVGUtils.emptyElement(handler, SVGConstants.SVG_LINE, atts);

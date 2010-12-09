@@ -24,6 +24,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.batik.util.Base64EncoderStream;
+import org.apache.commons.lang.StringUtils;
 import org.kabeja.xml.SAXFilter;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -111,7 +112,7 @@ public class ImageBase64Encoder extends XMLFilterImpl implements SAXFilter {
             e1.printStackTrace();
         }
 
-        return "";
+        return StringUtils.EMPTY;
     }
 
     public Map getProperties() {

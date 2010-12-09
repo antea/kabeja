@@ -118,17 +118,17 @@ public class SVG3DFaceGenerator extends AbstractSVGSAXGenerator {
         AttributesImpl attr = new AttributesImpl();
         // set the attributes
         SVGUtils.addAttribute(attr, SVGConstants.SVG_ATTRIBUTE_X1,
-            "" + p1.getX());
+            p1.getX());
 
         double value = p1.getY();
-        SVGUtils.addAttribute(attr, SVGConstants.SVG_ATTRIBUTE_Y1, "" + value);
+        SVGUtils.addAttribute(attr, SVGConstants.SVG_ATTRIBUTE_Y1, value);
 
         SVGUtils.addAttribute(attr, SVGConstants.SVG_ATTRIBUTE_X2,
-            "" + p2.getX());
+            p2.getX());
 
         value = p2.getY();
 
-        SVGUtils.addAttribute(attr, SVGConstants.SVG_ATTRIBUTE_Y2, "" + value);
+        SVGUtils.addAttribute(attr, SVGConstants.SVG_ATTRIBUTE_Y2, value);
         super.setCommonAttributes(attr, svgContext, face);
         SVGUtils.emptyElement(handler, SVGConstants.SVG_LINE, attr);
     }

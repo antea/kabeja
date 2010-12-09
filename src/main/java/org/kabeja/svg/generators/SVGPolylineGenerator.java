@@ -379,7 +379,7 @@ public class SVGPolylineGenerator extends AbstractSVGSAXGenerator
         if (start.getStartWidth() > 0.0) {
             SVGUtils.addAttribute(attr,
                 SVGConstants.SVG_ATTRIBUTE_STROKE_WITDH,
-                "" + start.getStartWidth());
+                start.getStartWidth());
         }
 
         SVGUtils.emptyElement(handler, SVGConstants.SVG_PATH, attr);

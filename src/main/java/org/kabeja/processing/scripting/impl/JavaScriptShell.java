@@ -69,6 +69,7 @@ import org.mozilla.javascript.Scriptable;
 import org.mozilla.javascript.ScriptableObject;
 
 import de.miethxml.toolkit.ui.UIUtils;
+import org.apache.commons.lang.StringUtils;
 
 
 public class JavaScriptShell extends AbstractPostProcessor
@@ -132,20 +133,20 @@ public class JavaScriptShell extends AbstractPostProcessor
 
         JButton button = new JButton((Action) actions.get("copy"));
         button.setToolTipText(button.getText());
-        button.setText("");
+        button.setText(StringUtils.EMPTY);
         toolbar.add(button);
         button = new JButton((Action) actions.get("paste"));
         button.setToolTipText(button.getText());
-        button.setText("");
+        button.setText(StringUtils.EMPTY);
         toolbar.add(button);
         button = new JButton((Action) actions.get("cut"));
         button.setToolTipText(button.getText());
-        button.setText("");
+        button.setText(StringUtils.EMPTY);
         toolbar.add(button);
 
         button = new JButton((Action) actions.get("reload"));
         button.setToolTipText(button.getText());
-        button.setText("");
+        button.setText(StringUtils.EMPTY);
         toolbar.add(button);
 
         return toolbar;
@@ -292,7 +293,7 @@ public class JavaScriptShell extends AbstractPostProcessor
             e.printStackTrace();
         }
 
-        return "";
+        return StringUtils.EMPTY;
     }
 
     protected int getStartOffsetAtCaretPosition() {
@@ -503,7 +504,7 @@ public class JavaScriptShell extends AbstractPostProcessor
 
             Object jsOut = Context.javaToJS(doc, scope);
             ScriptableObject.putProperty(scope, "dxf", jsOut);
-            textArea.setText("");
+            textArea.setText(StringUtils.EMPTY);
             if(doc!=null){
             textArea.append("DXFDocument available as 'dxf'\n");
             }

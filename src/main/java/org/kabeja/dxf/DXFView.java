@@ -15,6 +15,7 @@
 */
 package org.kabeja.dxf;
 
+import org.apache.commons.lang.StringUtils;
 import org.kabeja.dxf.helpers.Point;
 import org.kabeja.dxf.helpers.Vector;
 
@@ -27,7 +28,7 @@ public class DXFView {
     private Point centerPoint = new Point();
     private double height = 0.0;
     private double width = 0.0;
-    private String name = "";
+    private String name = StringUtils.EMPTY;
     private Vector viewDirection = new Vector();
     private Point target = new Point();
     private double lensLength = 0.0;

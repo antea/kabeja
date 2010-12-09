@@ -19,6 +19,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
+import org.apache.commons.lang.StringUtils;
 
 import org.kabeja.dxf.Bounds;
 import org.kabeja.dxf.DXFDocument;
@@ -84,13 +85,13 @@ public class LayerSeparator {
         //set fixed bounds
         DXFHeader h = doc.getDXFHeader();
         DXFVariable v = new DXFVariable("$PLIMMIN");
-        v.setValue("10", "" + b.getMinimumX());
-        v.setValue("20", "" + b.getMinimumY());
+        v.setValue("10", StringUtils.EMPTY + b.getMinimumX());
+        v.setValue("20", StringUtils.EMPTY + b.getMinimumY());
         h.setVariable(v);
 
         v = new DXFVariable("$PLIMMAX");
-        v.setValue("10", "" + b.getMaximumX());
-        v.setValue("20", "" + b.getMaximumY());
+        v.setValue("10", StringUtils.EMPTY + b.getMaximumX());
+        v.setValue("20", StringUtils.EMPTY + b.getMaximumY());
         h.setVariable(v);
 
         System.out.println(layers.size() + " layers to separate.");

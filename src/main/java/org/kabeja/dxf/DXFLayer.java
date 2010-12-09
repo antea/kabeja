@@ -20,6 +20,7 @@ import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.List;
+import org.apache.commons.lang.StringUtils;
 
 
 /**
@@ -29,13 +30,13 @@ import java.util.List;
  */
 public class DXFLayer {
     private Hashtable entities = new Hashtable();
-    private String name = "";
+    private String name = StringUtils.EMPTY;
     private int color = 7;
     private DXFDocument doc;
-    private String ltype = "";
+    private String ltype = StringUtils.EMPTY;
     private int flags = 0;
     private int lineWeight = 0;
-    private String plotStyle = "";
+    private String plotStyle = StringUtils.EMPTY;
 
     public DXFLayer() {
     }

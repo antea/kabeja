@@ -15,6 +15,7 @@
 */
 package org.kabeja.dxf;
 
+import org.apache.commons.lang.StringUtils;
 import org.kabeja.dxf.helpers.Point;
 
 
@@ -32,7 +33,7 @@ public class DXFInsert extends DXFEntity {
     private int columns = 1;
     private double row_spacing = 0;
     private double column_spacing = 0;
-    private String blockID = "";
+    private String blockID = StringUtils.EMPTY;
 
     /**
      *

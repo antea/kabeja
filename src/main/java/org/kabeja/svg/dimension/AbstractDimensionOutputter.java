@@ -43,8 +43,8 @@ public abstract class AbstractDimensionOutputter extends AbstractSVGSAXGenerator
             System.out.println("Textdim:" + dim.getDimensionText());
 
             AttributesImpl attr = new AttributesImpl();
-            SVGUtils.addAttribute(attr, "x", "" + dim.getTextPoint().getX());
-            SVGUtils.addAttribute(attr, "y", "" + dim.getTextPoint().getY());
+            SVGUtils.addAttribute(attr, "x", dim.getTextPoint().getX());
+            SVGUtils.addAttribute(attr, "y", dim.getTextPoint().getY());
 
             StringBuilder transform = new StringBuilder();
 
@@ -62,9 +62,12 @@ public abstract class AbstractDimensionOutputter extends AbstractSVGSAXGenerator
 
                 rotation += dim.getTextRotation();
                 transform.append(" rotate(");
-                transform.append("" + (-1 * rotation));
-                transform.append(" " + dim.getTextPoint().getX());
-                transform.append(" " + dim.getTextPoint().getY() + " )");
+                transform.append((-1 * rotation));
+                transform.append(" ");
+                transform.append(dim.getTextPoint().getX());
+                transform.append(" ");
+                transform.append(dim.getTextPoint().getY());
+                transform.append(" )");
             }
 
             SVGUtils.addAttribute(attr, "transform", transform.toString());
@@ -81,7 +84,7 @@ public abstract class AbstractDimensionOutputter extends AbstractSVGSAXGenerator
                     style.hasProperty(DXFDimensionStyle.PROPERTY_DIMTXT)) {
                 double height = style.getDoubleProperty(DXFDimensionStyle.PROPERTY_DIMTXT);
                 System.out.println("height from style:" + height);
-                SVGUtils.addAttribute(attr, "font-size", "" + height);
+                SVGUtils.addAttribute(attr, "font-size", height);
             } else {
                 //try from dxf header
                 DXFVariable var = dim.getDXFDocument().getDXFHeader()
@@ -91,7 +94,7 @@ public abstract class AbstractDimensionOutputter extends AbstractSVGSAXGenerator
                     System.out.println("height from doc:" +
                         var.getDoubleValue("40"));
                     SVGUtils.addAttribute(attr, "font-size",
-                        "" + var.getDoubleValue("40"));
+                        var.getDoubleValue("40"));
                 }
             }
 

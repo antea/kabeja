@@ -15,6 +15,8 @@
 */
 package org.kabeja.dxf.helpers;
 
+import org.apache.commons.lang.StringUtils;
+
 
 /**
  * @author <a href="mailto:simon.mieth@gmx.de>Simon Mieth</a>
@@ -30,14 +32,14 @@ public class StyledTextParagraph {
     private boolean underline = false;
     private boolean overline = false;
     private double fontHeight = 0.0;
-    private String font = "";
+    private String font = StringUtils.EMPTY;
     private StringBuilder text = new StringBuilder();
     private double width = 0.0;
     private double obliquiAngle = 0.0;
     private double characterspace = 0.0;
     private int lineIndex = 0;
     private boolean newline = false;
-    private String fontFile = "";
+    private String fontFile = StringUtils.EMPTY;
     private int alignment = 1;
     private Point insertPoint = new Point();
 

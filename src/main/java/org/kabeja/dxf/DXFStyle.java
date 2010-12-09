@@ -15,15 +15,17 @@
 */
 package org.kabeja.dxf;
 
+import org.apache.commons.lang.StringUtils;
+
 
 /**
  * @author <a href="mailto:simon.mieth@gmx.de>Simon Mieth</a>
  *
  */
 public class DXFStyle {
-    private String name = "";
-    private String fontFile = "";
-    private String bigFontFile = "";
+    private String name = StringUtils.EMPTY;
+    private String fontFile = StringUtils.EMPTY;
+    private String bigFontFile = StringUtils.EMPTY;
     private double textHeight = 0.0;
     private double widthFactor = 1.0;
     private double obliqueAngle = 0.0;

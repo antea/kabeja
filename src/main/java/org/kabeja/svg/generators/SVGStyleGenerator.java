@@ -17,6 +17,7 @@ package org.kabeja.svg.generators;
 
 import java.util.HashMap;
 import java.util.Map;
+import org.apache.commons.lang.StringUtils;
 
 import org.kabeja.dxf.DXFStyle;
 import org.kabeja.svg.SVGConstants;
@@ -80,7 +81,7 @@ public class SVGStyleGenerator {
 
         String url = FontManager.getInstance().getFontDescription(font) + "#" +
             font;
-        attr.addAttribute("", "", SVGConstants.XMLNS_XLINK,
+        attr.addAttribute(StringUtils.EMPTY, StringUtils.EMPTY, SVGConstants.XMLNS_XLINK,
             SVGUtils.DEFAUL_ATTRIBUTE_TYPE, SVGConstants.XLINK_NAMESPACE);
         attr.addAttribute(SVGConstants.XLINK_NAMESPACE, "href", SVGConstants.XLINK_HREF,
             SVGUtils.DEFAUL_ATTRIBUTE_TYPE, url);

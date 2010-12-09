@@ -42,6 +42,7 @@ import org.w3c.dom.svg.SVGDocument;
 import org.w3c.dom.svg.SVGMatrix;
 
 import de.miethxml.toolkit.ui.UIUtils;
+import org.apache.commons.lang.StringUtils;
 
 
 public class SelectionAction extends AbstractAction implements SVGDocumentAction,
@@ -126,7 +127,7 @@ public class SelectionAction extends AbstractAction implements SVGDocumentAction
     }
 
     protected void changePosition(float x, float y, float endX, float endY) {
-        this.selectionRectangle.setAttributeNS(null, "y", "" + y);
+        this.selectionRectangle.setAttributeNS(null, "y", StringUtils.EMPTY + y);
 
         float width = (float) (((matrix.getA() * endX) +
             (matrix.getC() * endY) + matrix.getE()) - x);
@@ -135,25 +136,25 @@ public class SelectionAction extends AbstractAction implements SVGDocumentAction
 
         if (width < 0) {
             this.selectionRectangle.setAttributeNS(null, "x",
-                "" + SVGUtils.formatNumberAttribute(x + width));
+                StringUtils.EMPTY + SVGUtils.formatNumberAttribute(x + width));
             this.selectionRectangle.setAttributeNS(null, "width",
-                "" + SVGUtils.formatNumberAttribute(Math.abs(width)));
+                StringUtils.EMPTY + SVGUtils.formatNumberAttribute(Math.abs(width)));
         } else {
             this.selectionRectangle.setAttributeNS(null, "x",
-                "" + SVGUtils.formatNumberAttribute(x));
+                StringUtils.EMPTY + SVGUtils.formatNumberAttribute(x));
             this.selectionRectangle.setAttributeNS(null, "width",
-                "" + SVGUtils.formatNumberAttribute(width));
+                StringUtils.EMPTY + SVGUtils.formatNumberAttribute(width));
         }
 
         if (height < 0) {
             this.selectionRectangle.setAttributeNS(null, "y",
-                "" + SVGUtils.formatNumberAttribute(y + height));
+                StringUtils.EMPTY + SVGUtils.formatNumberAttribute(y + height));
             this.selectionRectangle.setAttributeNS(null, "height",
-                "" + SVGUtils.formatNumberAttribute(Math.abs(height)));
+                StringUtils.EMPTY + SVGUtils.formatNumberAttribute(Math.abs(height)));
         } else {
-            this.selectionRectangle.setAttributeNS(null, "y", "" + y);
+            this.selectionRectangle.setAttributeNS(null, "y", StringUtils.EMPTY + y);
             this.selectionRectangle.setAttributeNS(null, "height",
-                "" + SVGUtils.formatNumberAttribute(height));
+                StringUtils.EMPTY + SVGUtils.formatNumberAttribute(height));
         }
     }
 
@@ -232,12 +233,12 @@ public class SelectionAction extends AbstractAction implements SVGDocumentAction
         this.properties.put(BoundsFilter.PROPERTY_X,
             this.selectionRectangle.getAttribute("x"));
         this.properties.put(BoundsFilter.PROPERTY_Y,
-            "" +
+            StringUtils.EMPTY +
             (((-1) * Double.parseDouble(this.selectionRectangle.getAttribute(
                     "y"))) - height));
         this.properties.put(BoundsFilter.PROPERTY_WIDTH,
             this.selectionRectangle.getAttribute("width"));
-        this.properties.put(BoundsFilter.PROPERTY_HEIGHT, "" + height);
+        this.properties.put(BoundsFilter.PROPERTY_HEIGHT, StringUtils.EMPTY + height);
         this.properties.put(BoundsFilter.PROPERTY_PROCESS,
             Boolean.toString(process));
 

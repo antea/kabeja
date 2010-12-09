@@ -15,6 +15,7 @@
 */
 package org.kabeja.parser;
 
+import org.apache.commons.lang.StringUtils;
 import org.kabeja.dxf.DXFDocument;
 import org.kabeja.dxf.DXFHeader;
 import org.kabeja.dxf.DXFVariable;
@@ -59,7 +60,7 @@ public class DXFHeaderSectionHandler implements DXFSectionHandler {
     }
 
     private void parse(int code, DXFValue value) {
-        variable.setValue("" + code, value.getValue());
+        variable.setValue(StringUtils.EMPTY + code, value.getValue());
     }
 
     /* (non-Javadoc)

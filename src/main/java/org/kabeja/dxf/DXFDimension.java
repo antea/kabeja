@@ -5,6 +5,7 @@
  */
 package org.kabeja.dxf;
 
+import org.apache.commons.lang.StringUtils;
 import org.kabeja.dxf.helpers.Point;
 
 
@@ -34,9 +35,9 @@ public class DXFDimension extends DXFEntity {
     protected boolean exactTextLineSpacing = false;
     protected double rotate = 0;
     protected double horizontalDirection = 0;
-    protected String dimensionStyle = "";
-    protected String dimensionText = "";
-    protected String dimensionBlock = "";
+    protected String dimensionStyle = StringUtils.EMPTY;
+    protected String dimensionText = StringUtils.EMPTY;
+    protected String dimensionBlock = StringUtils.EMPTY;
     protected int dimensionArea = 0;
     protected double textRotation = 0.0;
     protected double dimensionRotation = 0.0;

@@ -15,6 +15,7 @@
 */
 package org.kabeja.dxf;
 
+import org.apache.commons.lang.StringUtils;
 import org.kabeja.dxf.helpers.Point;
 import org.kabeja.dxf.helpers.Vector;
 
@@ -25,7 +26,7 @@ import org.kabeja.dxf.helpers.Vector;
  */
 public class DXFTolerance extends DXFEntity {
     protected Point insertionPoint = new Point();
-    protected String styleNameID = "";
+    protected String styleNameID = StringUtils.EMPTY;
     protected String text;
     protected Vector xaxisDirection = new Vector();
 

@@ -44,6 +44,7 @@ import org.w3c.dom.events.EventTarget;
 import org.w3c.dom.svg.SVGDocument;
 
 import de.miethxml.toolkit.ui.UIUtils;
+import org.apache.commons.lang.StringUtils;
 
 
 public class HighlightAction extends AbstractAction implements SVGDocumentAction,
@@ -127,7 +128,7 @@ public class HighlightAction extends AbstractAction implements SVGDocumentAction
         fontSize = width / 5;
         this.labelID = doc.createElementNS(svgNS, "text");
         this.labelID.setAttributeNS(null, "x", data[0]);
-        this.labelID.setAttributeNS(null, "y", "" + (y + fontSize));
+        this.labelID.setAttributeNS(null, "y", StringUtils.EMPTY + (y + fontSize));
 
         this.labelID.setAttributeNS(null, "style", "stroke-width:12pt");
         this.labelID.setAttributeNS(null, "visibility", "hidden");
@@ -186,8 +187,8 @@ public class HighlightAction extends AbstractAction implements SVGDocumentAction
         //					+ matrix.getC() * mevt.getClientY() + matrix.getE();
         //			double startY = matrix.getB() * mevt.getClientX()
         //					+ matrix.getD() * mevt.getClientY() + matrix.getF();
-        //			this.labelID.setAttributeNS(null, "x", ""+startX);
-        //			this.labelID.setAttributeNS(null, "y", ""+startY);
+        //			this.labelID.setAttributeNS(null, "x", StringUtils.EMPTY+startX);
+        //			this.labelID.setAttributeNS(null, "y", StringUtils.EMPTY+startY);
         //			String s = doc.getDocumentElement().getAttribute("viewBox");
         //            System.out.println("s="+s);
         //			String[] data = s.split("\\s+");

@@ -18,6 +18,7 @@ package org.kabeja.svg;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
+import org.apache.commons.lang.StringUtils;
 
 import org.kabeja.dxf.DXFDocument;
 import org.kabeja.parser.DXFParser;
@@ -342,12 +343,12 @@ public class DXF2SVGReader extends XMLFilterImpl {
             AttributesImpl attributes = new AttributesImpl(atts);
 
             if (atts.getIndex("xmlns") == -1) {
-                attributes.addAttribute("", "xmlns", "xmlns", SVGUtils.DEFAUL_ATTRIBUTE_TYPE,
-                     SVGConstants.SVG_NAMESPACE);
+                attributes.addAttribute(StringUtils.EMPTY, "xmlns", "xmlns",
+                     SVGUtils.DEFAUL_ATTRIBUTE_TYPE, SVGConstants.SVG_NAMESPACE);
             }
 
             if (atts.getIndex("xmlns:xlink") == -1) {
-                attributes.addAttribute("", "", 
+                attributes.addAttribute(StringUtils.EMPTY, StringUtils.EMPTY,
                     SVGConstants.XMLNS_XLINK, SVGUtils.DEFAUL_ATTRIBUTE_TYPE,
                     SVGConstants.XLINK_NAMESPACE);
             }

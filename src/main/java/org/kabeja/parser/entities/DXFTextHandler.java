@@ -15,6 +15,7 @@
 */
 package org.kabeja.parser.entities;
 
+import org.apache.commons.lang.StringUtils;
 import org.kabeja.dxf.DXFConstants;
 import org.kabeja.dxf.DXFEntity;
 import org.kabeja.dxf.DXFText;
@@ -55,7 +56,7 @@ public class DXFTextHandler extends AbstractEntityHandler {
      */
     public void endDXFEntity() {
         text.setText(this.content);
-        this.content = "";
+        this.content = StringUtils.EMPTY;
     }
 
     /*

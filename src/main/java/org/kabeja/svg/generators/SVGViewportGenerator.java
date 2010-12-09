@@ -53,17 +53,15 @@ public class SVGViewportGenerator extends AbstractSVGSAXGenerator {
             Point center = viewport.getCenterPoint();
             AttributesImpl attr = new AttributesImpl();
             SVGUtils.addAttribute(attr, SVGConstants.SVG_ATTRIBUTE_X,
-                "" +
                 SVGUtils.formatNumberAttribute((center.getX() -
                     (viewport.getWidth() / 2))));
             SVGUtils.addAttribute(attr, SVGConstants.SVG_ATTRIBUTE_Y,
-                "" +
                 SVGUtils.formatNumberAttribute((center.getY() -
                     (viewport.getHeight() / 2))));
             SVGUtils.addAttribute(attr, SVGConstants.SVG_ATTRIBUTE_WIDTH,
-                "" + SVGUtils.formatNumberAttribute(viewport.getWidth()));
+                SVGUtils.formatNumberAttribute(viewport.getWidth()));
             SVGUtils.addAttribute(attr, SVGConstants.SVG_ATTRIBUTE_HEIGHT,
-                "" + SVGUtils.formatNumberAttribute(viewport.getHeight()));
+                SVGUtils.formatNumberAttribute(viewport.getHeight()));
             super.setCommonAttributes(attr, svgContext, entity);
             SVGUtils.emptyElement(handler, SVGConstants.SVG_RECTANLGE, attr);
 

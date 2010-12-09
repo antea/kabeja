@@ -16,6 +16,7 @@
 package org.kabeja.svg;
 
 import java.util.Map;
+import org.apache.commons.lang.StringUtils;
 
 import org.kabeja.xml.AbstractSAXFilter;
 import org.xml.sax.Attributes;
@@ -71,7 +72,7 @@ public class FixedStrokeWidthFilter extends AbstractSAXFilter {
                             SVGConstants.SVG_ATTRIBUTE_TRANSFORM),
                         transform + scaleValue);
                 } else {
-                    attsImpl.addAttribute("",
+                    attsImpl.addAttribute(StringUtils.EMPTY,
                         SVGConstants.SVG_ATTRIBUTE_TRANSFORM,
                         SVGConstants.SVG_ATTRIBUTE_TRANSFORM,
                         SVGUtils.DEFAUL_ATTRIBUTE_TYPE, scaleValue);
@@ -79,10 +80,10 @@ public class FixedStrokeWidthFilter extends AbstractSAXFilter {
 
                 //to avoid scaling of the  coordinats
                 double x = Double.parseDouble(atts.getValue("x")) / fixedSize;
-                attsImpl.setValue(atts.getIndex("x"), "" + x);
+                attsImpl.setValue(atts.getIndex("x"), StringUtils.EMPTY + x);
 
                 double y = Double.parseDouble(atts.getValue("y")) / fixedSize;
-                attsImpl.setValue(atts.getIndex("y"), "" + y);
+                attsImpl.setValue(atts.getIndex("y"), StringUtils.EMPTY + y);
             }
         }
 
@@ -118,7 +119,7 @@ public class FixedStrokeWidthFilter extends AbstractSAXFilter {
             double f = Double.parseDouble(strokeWidth.substring(0,
                         value.length() - 1)) / 100;
 
-            return "" + (f * this.strokeBase);
+            return StringUtils.EMPTY + (f * this.strokeBase);
         } else {
             return strokeWidth;
         }

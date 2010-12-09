@@ -17,6 +17,7 @@ package org.kabeja.parser;
 
 import java.util.Hashtable;
 import java.util.Iterator;
+import org.apache.commons.lang.StringUtils;
 
 import org.kabeja.parser.table.DXFTableHandler;
 
@@ -31,7 +32,7 @@ public class DXFTableSectionHandler extends AbstractSectionHandler
     public final static String TABLE_START = "TABLE";
     public final static String TABLE_END = "ENDTAB";
     public final int TABLE_CODE = 0;
-    private String table = "";
+    private String table = StringUtils.EMPTY;
     private DXFTableHandler handler;
     private Hashtable handlers = new Hashtable();
     private boolean parse = false;
@@ -57,7 +58,7 @@ public class DXFTableSectionHandler extends AbstractSectionHandler
         if (groupCode == TABLE_CODE) {
             //switch table
             if (TABLE_END.equals(value)) {
-                table = "";
+                table = StringUtils.EMPTY;
 
                 if (parse) {
                     handler.endParsing();

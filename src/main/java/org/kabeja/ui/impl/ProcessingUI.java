@@ -49,6 +49,7 @@ import org.kabeja.ui.Startable;
 import org.kabeja.ui.ViewComponent;
 
 import de.miethxml.toolkit.ui.SelectorComponent;
+import org.apache.commons.lang.StringUtils;
 
 
 public class ProcessingUI implements Serviceable, Startable,
@@ -142,7 +143,7 @@ public class ProcessingUI implements Serviceable, Startable,
             mainPanel.setPreferredSize(view.getPreferredSize());
         }
 
-        mainPanel.add(view, "" + index); //$NON-NLS-1$
+        mainPanel.add(view, StringUtils.EMPTY + index); //$NON-NLS-1$
 
         AbstractAction action = new SwitchAction(component.getTitle(), index);
 
@@ -180,7 +181,7 @@ public class ProcessingUI implements Serviceable, Startable,
     public void addAction(Action action) {
         JButton button = new JButton(action);
         button.setToolTipText(button.getText());
-        button.setText("");
+        button.setText(StringUtils.EMPTY);
         this.addAction(button);
     }
 
@@ -233,7 +234,7 @@ public class ProcessingUI implements Serviceable, Startable,
         }
 
         public void actionPerformed(ActionEvent e) {
-            mainContainer.show(mainPanel, "" + this.index); //$NON-NLS-1$
+            mainContainer.show(mainPanel, StringUtils.EMPTY + this.index); //$NON-NLS-1$
         }
     }
 }

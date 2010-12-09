@@ -15,6 +15,7 @@
 */
 package org.kabeja.svg;
 
+import org.apache.commons.lang.StringUtils;
 import org.kabeja.xml.AbstractSAXFilter;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -30,8 +31,8 @@ import org.xml.sax.helpers.AttributesImpl;
 public class RootLayerFilter extends AbstractSAXFilter {
     private boolean inDraftSection = false;
     private int groupDepth = 0;
-    private String transformValue = "";
-    private String strokeWidth = "";
+    private String transformValue = StringUtils.EMPTY;
+    private String strokeWidth = StringUtils.EMPTY;
 
     public void endElement(String uri, String localName, String qName)
         throws SAXException {
@@ -77,7 +78,7 @@ public class RootLayerFilter extends AbstractSAXFilter {
                     if (attributes.getIndex(
                                 SVGConstants.SVG_ATTRIBUTE_TRANSFORM) != -1) {
                         attributes.setAttribute(attributes.getIndex(
-                                SVGConstants.SVG_ATTRIBUTE_TRANSFORM), "",
+                                SVGConstants.SVG_ATTRIBUTE_TRANSFORM), StringUtils.EMPTY,
                             SVGConstants.SVG_ATTRIBUTE_TRANSFORM,
                             SVGConstants.SVG_ATTRIBUTE_TRANSFORM,
                             SVGUtils.DEFAUL_ATTRIBUTE_TYPE,
@@ -85,7 +86,7 @@ public class RootLayerFilter extends AbstractSAXFilter {
                             attributes.getValue(
                                 SVGConstants.SVG_ATTRIBUTE_TRANSFORM));
                     } else {
-                        attributes.addAttribute("",
+                        attributes.addAttribute(StringUtils.EMPTY,
                             SVGConstants.SVG_ATTRIBUTE_TRANSFORM,
                             SVGConstants.SVG_ATTRIBUTE_TRANSFORM,
                             SVGUtils.DEFAUL_ATTRIBUTE_TYPE, this.transformValue);
@@ -93,7 +94,7 @@ public class RootLayerFilter extends AbstractSAXFilter {
 
                     if (attributes.getIndex(
                                 SVGConstants.SVG_ATTRIBUTE_STROKE_WITDH) == -1) {
-                        attributes.addAttribute("",
+                        attributes.addAttribute(StringUtils.EMPTY,
                             SVGConstants.SVG_ATTRIBUTE_STROKE_WITDH,
                             SVGConstants.SVG_ATTRIBUTE_STROKE_WITDH,
                             SVGUtils.DEFAUL_ATTRIBUTE_TYPE, this.strokeWidth);

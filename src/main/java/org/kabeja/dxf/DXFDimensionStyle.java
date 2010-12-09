@@ -17,6 +17,7 @@ package org.kabeja.dxf;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import org.apache.commons.lang.StringUtils;
 
 
 /**
@@ -116,7 +117,7 @@ public class DXFDimensionStyle {
     public static final String PROPERTY_DIMZIN = "78";
     private HashMap properties = new HashMap();
     private int flags = 0;
-    private String name = "";
+    private String name = StringUtils.EMPTY;
 
     public void setProperty(String key, String value) {
         properties.put(key, value);

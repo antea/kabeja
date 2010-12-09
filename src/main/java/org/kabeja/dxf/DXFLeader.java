@@ -18,6 +18,7 @@ package org.kabeja.dxf;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import org.apache.commons.lang.StringUtils;
 
 import org.kabeja.dxf.helpers.Point;
 
@@ -27,7 +28,7 @@ import org.kabeja.dxf.helpers.Point;
  *
  */
 public class DXFLeader extends DXFEntity {
-    protected String styleName = "";
+    protected String styleName = StringUtils.EMPTY;
     protected double arrowHeadSize = 0.0;
     protected double textGap;
     protected double scaleFactor;
@@ -42,7 +43,7 @@ public class DXFLeader extends DXFEntity {
     protected Point lastOffsetText = new Point();
     protected Point lastOffsetInsertion = new Point();
     protected boolean arrowEnabled = false;
-    protected String textID = "";
+    protected String textID = StringUtils.EMPTY;
 
     /**
      * @return Returns the textID.

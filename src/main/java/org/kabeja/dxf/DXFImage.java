@@ -5,6 +5,7 @@
 package org.kabeja.dxf;
 
 import java.util.ArrayList;
+import org.apache.commons.lang.StringUtils;
 
 import org.kabeja.dxf.helpers.Point;
 import org.kabeja.dxf.objects.DXFImageDefObject;
@@ -20,7 +21,7 @@ public class DXFImage extends DXFEntity {
     protected Point vectorU = new Point();
     protected double imageSizeAlongU;
     protected double imageSizeAlongV;
-    protected String imageDefID = "";
+    protected String imageDefID = StringUtils.EMPTY;
     protected double brightness;
     protected double contrast;
     protected double fade;

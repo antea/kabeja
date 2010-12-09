@@ -15,6 +15,7 @@
 */
 package org.kabeja.dxf;
 
+import org.apache.commons.lang.StringUtils;
 import org.kabeja.dxf.helpers.Point;
 
 
@@ -23,7 +24,7 @@ import org.kabeja.dxf.helpers.Point;
  *
  */
 public class DXFVPort {
-    private String name = "";
+    private String name = StringUtils.EMPTY;
     private Point lowerLeftCorner = new Point();
     private Point upperRightCorner = new Point();
     private Point centerPoint = new Point();

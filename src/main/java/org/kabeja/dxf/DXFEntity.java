@@ -15,6 +15,8 @@
 */
 package org.kabeja.dxf;
 
+import org.apache.commons.lang.StringUtils;
+
 
 /**
  * @author <a href="mailto:simon.mieth@gmx.de>Simon Mieth</a>
@@ -23,10 +25,10 @@ package org.kabeja.dxf;
  */
 public abstract class DXFEntity {
     protected DXFDocument doc;
-    protected String id = "";
-    protected String layerID = "";
+    protected String id = StringUtils.EMPTY;
+    protected String layerID = StringUtils.EMPTY;
     protected boolean visibile = true;
-    protected String lineType = "";
+    protected String lineType = StringUtils.EMPTY;
     protected int flags = 0;
     protected boolean block = false;
     protected double linetypeScaleFactor = 1.0;

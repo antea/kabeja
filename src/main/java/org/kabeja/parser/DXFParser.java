@@ -26,6 +26,7 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.List;
+import org.apache.commons.lang.StringUtils;
 
 import org.kabeja.dxf.DXFDocument;
 import org.kabeja.parser.dxf.DXFHandler;
@@ -45,7 +46,7 @@ public class DXFParser implements HandlerManager, Handler, Parser, DXFHandler {
     private final static String SECTION_END = "ENDSEC";
     private final static String END_STREAM = "EOF";
     private final static int COMMAND_CODE = 0;
-    public static final String DEFAULT_ENCODING = "";
+    public static final String DEFAULT_ENCODING = StringUtils.EMPTY;
     protected DXFDocument doc;
     protected Hashtable handlers = new Hashtable();
     protected DXFSectionHandler currentHandler;
@@ -92,7 +93,7 @@ public class DXFParser implements HandlerManager, Handler, Parser, DXFHandler {
      */
     public void parse(InputStream input, String encoding)
         throws ParseException {
-        String currentKey = "";
+        String currentKey = StringUtils.EMPTY;
         key = false;
         linecount = 0;
         parse = false;
@@ -106,7 +107,7 @@ public class DXFParser implements HandlerManager, Handler, Parser, DXFHandler {
         BufferedReader in = null;
 
         try {
-            if ("".equals(encoding)) {
+            if (StringUtils.EMPTY.equals(encoding)) {
                 BufferedInputStream buf = new BufferedInputStream(input);
                 buf.mark(9000);
 

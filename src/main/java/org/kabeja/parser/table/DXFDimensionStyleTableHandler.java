@@ -15,6 +15,7 @@
 */
 package org.kabeja.parser.table;
 
+import org.apache.commons.lang.StringUtils;
 import org.kabeja.dxf.DXFDimensionStyle;
 import org.kabeja.parser.DXFValue;
 import org.kabeja.parser.entities.AbstractEntityHandler;
@@ -66,7 +67,7 @@ public class DXFDimensionStyleTableHandler extends AbstractTableHandler {
             break;
 
         default:
-            style.setProperty("" + groupCode, value.getValue());
+            style.setProperty(StringUtils.EMPTY + groupCode, value.getValue());
         }
     }
 

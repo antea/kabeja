@@ -17,6 +17,7 @@ package org.kabeja.dxf;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import org.apache.commons.lang.StringUtils;
 
 import org.kabeja.dxf.helpers.Point;
 
@@ -29,8 +30,8 @@ public class DXFBlock {
     public static String TYPE = "BLOCK";
     private Point referencePoint;
     private String layerID = DXFConstants.DEFAULT_LAYER;
-    private String name = "";
-    private String description = "";
+    private String name = StringUtils.EMPTY;
+    private String description = StringUtils.EMPTY;
     private ArrayList entities;
     private DXFDocument doc;
 

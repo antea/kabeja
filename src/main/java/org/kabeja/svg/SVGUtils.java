@@ -9,6 +9,7 @@ import java.net.MalformedURLException;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Iterator;
+import org.apache.commons.lang.StringUtils;
 
 import org.kabeja.dxf.DXFLineType;
 import org.kabeja.dxf.helpers.StyledTextParagraph;
@@ -58,7 +59,13 @@ public class SVGUtils {
         // attr.addAttribute(SVGConstants.SVG_NAMESPACE, name,
         // SVGConstants.SVG_PREFIX+":"+name , DEFAUL_ATTRIBUTE_TYPE,
         // value);
-        attr.addAttribute("", name, name, DEFAUL_ATTRIBUTE_TYPE, value);
+        attr.addAttribute(StringUtils.EMPTY, name, name, DEFAUL_ATTRIBUTE_TYPE, value);
+    }
+
+    public static void addAttribute(AttributesImpl attr, String name,
+        double value) {
+        attr.addAttribute(StringUtils.EMPTY, name, name, DEFAUL_ATTRIBUTE_TYPE, 
+                Double.toString(value));
     }
 
     public static void characters(ContentHandler handler, String text)
@@ -229,7 +236,7 @@ public class SVGUtils {
     public static void styledTextToSAX(ContentHandler handler,
         StyledTextParagraph para) throws SAXException {
         AttributesImpl atts = new AttributesImpl();
-        String decoration = "";
+        String decoration = StringUtils.EMPTY;
 
         if (para.isUnderline()) {
             decoration += "underline ";
@@ -249,7 +256,7 @@ public class SVGUtils {
         }
 
         if (para.isNewline()) {
-            SVGUtils.addAttribute(atts, "x", "" + para.getInsertPoint().getX());
+            SVGUtils.addAttribute(atts, "x", para.getInsertPoint().getX());
             para.setNewline(false);
         }
 
@@ -266,7 +273,7 @@ public class SVGUtils {
 
         if (para.getWidth() > 0.0) {
             SVGUtils.addAttribute(atts, SVGConstants.SVG_ATTRIBUTE_TEXT_LENGTH,
-                "" + para.getWidth());
+                para.getWidth());
         }
 
         if (para.isBold()) {
@@ -286,7 +293,7 @@ public class SVGUtils {
 
         if (para.getFontHeight() > 0) {
             SVGUtils.addAttribute(atts, SVGConstants.SVG_ATTRIBUTE_FONT_SIZE,
-                "" + formatNumberAttribute(para.getFontHeight()));
+                formatNumberAttribute(para.getFontHeight()));
         }
 
         SVGUtils.startElement(handler, SVGConstants.SVG_TSPAN, atts);
@@ -349,6 +356,6 @@ public class SVGUtils {
     public static String lineWeightToStrokeWidth(int lineWeight) {
         double w = (double) lineWeight / 100.0;
 
-        return "" + w + "mm";
+        return StringUtils.EMPTY + w + "mm";
     }
 }
