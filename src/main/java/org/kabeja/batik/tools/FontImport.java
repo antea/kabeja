@@ -144,7 +144,7 @@ public class FontImport {
         shx = fixFileName(shx);
 
         String[] args = new String[] {
-                source.getAbsolutePath(), "-id", shx, "-o",
+                source.getAbsolutePath(), "-autorange", "-testcard", "-id", shx, "-o",
                 dest.getAbsolutePath()
             };
         SVGFont.main(args);
