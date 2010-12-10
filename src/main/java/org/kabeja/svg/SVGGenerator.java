@@ -118,7 +118,7 @@ public class SVGGenerator extends AbstractSAXGenerator {
 
         if (this.properties.containsKey(PROPERTY_STROKE_WIDTH)) {
             this.context.put(SVGContext.STROKE_WIDTH,
-                this.properties.get(PROPERTY_STROKE_WIDTH));
+                new Double(this.properties.get(PROPERTY_STROKE_WIDTH).toString()));
             // set to ignore the draft stroke width
             this.context.put(SVGContext.STROKE_WIDTH_IGNORE, StringUtils.EMPTY);
         }
