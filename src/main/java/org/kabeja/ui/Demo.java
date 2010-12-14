@@ -36,7 +36,7 @@ public class Demo {
         Parser p = ParserBuilder.createDefaultParser();
 
         try {
-            p.parse("/home/simon/Desktop/kabeja/problemDXF/t6.dxf");
+            p.parse("samples/dxf/draft4.dxf");
 
             DXFDocument doc = p.getDocument();
             DXFEntity e = doc.getDXFEntityByID("406F");
