@@ -26,6 +26,7 @@ import org.kabeja.math.TransformContext;
 import org.kabeja.svg.SVGConstants;
 import org.kabeja.svg.SVGContext;
 import org.kabeja.svg.SVGUtils;
+import org.kabeja.svg.tools.FontReplacer;
 import org.kabeja.tools.FontManager;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.SAXException;
@@ -60,7 +61,10 @@ public class SVGTextGenerator extends AbstractSVGSAXGenerator {
                 fontID = style.getBigFontFile();
             } else if (manager.hasFontDescription(style.getFontFile())) {
                 fontID = style.getFontFile();
-            }
+            } else if (FontReplacer.hasReplacement(style.getFontFile())
+                && manager.hasFontDescription(FontReplacer.getReplacement(style.getFontFile()))) {
+            fontID = FontReplacer.getReplacement(style.getFontFile());
+        }
 
             if (fontID != null) {
                 fontID = fontID.toLowerCase();
