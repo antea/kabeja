@@ -161,7 +161,7 @@ public class DXFDocument {
     }
 
     public String getProperty(String key) {
-        if (properties.contains(key)) {
+        if (properties.containsKey(key)) {
             return (String) properties.get(key);
         }
 
