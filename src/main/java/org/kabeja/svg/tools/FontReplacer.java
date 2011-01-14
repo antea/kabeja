@@ -11,7 +11,7 @@ public class FontReplacer {
 
     private static Map<String, String> replaceTable = new HashMap<String, String>();
 
-    public static void addReplacement(String from, String to) {
+    public static synchronized void addReplacement(String from, String to) {
         replaceTable.put(from, to);
     }
 
@@ -23,7 +23,7 @@ public class FontReplacer {
         return replaceTable.get(font);
     }
 
-    public static void clearReplacements() {
+    public static synchronized void clearReplacements() {
         replaceTable.clear();
     }
 }
