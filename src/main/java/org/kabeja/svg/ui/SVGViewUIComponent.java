@@ -222,6 +222,18 @@ public class SVGViewUIComponent implements DXFDocumentViewComponent,
     public void showDXFDocument(DXFDocument doc) throws UIException {
         this.doc = doc;
         this.properties.clear();
+        if (doc.hasProperty(SVGGenerator.PROPERTY_DOCUMENT_BOUNDS_RULE)) {
+            this.properties.put(SVGGenerator.PROPERTY_DOCUMENT_BOUNDS_RULE,
+                    doc.getProperty(SVGGenerator.PROPERTY_DOCUMENT_BOUNDS_RULE));
+        }
+        if (doc.hasProperty(SVGGenerator.PROPERTY_DOCUMENT_OUTPUT_STYLE)) {
+            this.properties.put(SVGGenerator.PROPERTY_DOCUMENT_OUTPUT_STYLE,
+                    doc.getProperty(SVGGenerator.PROPERTY_DOCUMENT_OUTPUT_STYLE));
+        }
+        if (doc.hasProperty(SVGGenerator.PROPERTY_STROKE_WIDTH)) {
+            this.properties.put(SVGGenerator.PROPERTY_STROKE_WIDTH,
+                    doc.getProperty(SVGGenerator.PROPERTY_STROKE_WIDTH));
+        }
 
         // this will invoke the view
         //this.switchViewBox.setSelectedIndex(-1);
