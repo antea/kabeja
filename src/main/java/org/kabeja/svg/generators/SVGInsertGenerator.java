@@ -46,7 +46,13 @@ public class SVGInsertGenerator extends AbstractSVGSAXGenerator {
         double rotate = insert.getRotate();
         Point insertPoint = insert.getPoint();
         double scale_x = insert.getScaleX();
+        if (scale_x < 0) {
+            scale_x *= -1;
+        }
         double scale_y = insert.getScaleY();
+        if (scale_y < 0) {
+            scale_y *= -1;
+        }
         double column_spacing = insert.getColumnSpacing();
         double row_spacing = insert.getRowSpacing();
 
