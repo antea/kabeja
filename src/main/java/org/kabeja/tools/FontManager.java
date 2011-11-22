@@ -176,6 +176,9 @@ public class FontManager {
     }
 
     public String getFontDescriptionFromStyle(DXFStyle style) {
+        if (StringUtils.isBlank(style.getBigFontFile()) || StringUtils.isBlank(style.getFontFile())) {
+            return null;
+        }
         String fontID = null;
         if ((fontID = hasFontDescription(style.getBigFontFile())) != null) {
             return fontID;
