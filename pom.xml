@@ -25,6 +25,14 @@ to jpeg, tiff, png and pdf are included.
     </issueManagement>
 
     <inceptionYear>2005</inceptionYear>
+ 
+    <distributionManagement>
+        <repository>
+            <id>m2</id>
+            <name>Repository m2.antea.bogus</name>
+            <url>scp://deployer@m2.antea.bogus/srv/maven</url>
+        </repository>
+    </distributionManagement>
 
     <developers>
         <developer>
