@@ -34,6 +34,23 @@ to jpeg, tiff, png and pdf are included.
         </repository>
     </distributionManagement>
 
+   <repositories>
+        <!-- Repository condivisa Antea. -->
+        <repository>
+            <id>antea</id>
+            <name>Repository Aziendale Antea</name>
+            <url>http://m2.antea.bogus</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
     <developers>
         <developer>
             <id>simijhag</id>
