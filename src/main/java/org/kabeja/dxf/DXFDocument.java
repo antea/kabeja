@@ -16,6 +16,7 @@
 package org.kabeja.dxf;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Hashtable;
@@ -113,7 +114,7 @@ public class DXFDocument {
      * @return the iterator over all DXFLayer of this document
      */
     public Iterator getDXFLayerIterator() {
-        return layers.values().iterator();
+        return new ArrayList(layers.values()).iterator();
     }
 
     public void addDXFLineType(DXFLineType ltype) {
