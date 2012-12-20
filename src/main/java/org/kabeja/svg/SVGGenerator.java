@@ -75,7 +75,7 @@ public class SVGGenerator extends AbstractSAXGenerator {
     public final static String PROPERTY_HEIGHT = "height";
     public final static String PROPERTY_OVERFLOW = "svg-overflow";
     public static final double DEFAULT_MARGIN_PERCENT = 0.0;
-    public final static String SUPPORTED_SVG_VERSION = "1.0";
+    public final static String SUPPORTED_SVG_VERSION = "1.1"; // we say we produce version 1.1 to fool svgo
     private boolean overflow = true;
     private boolean useLimits = false;
     private int boundsRule = PROPERTY_DOCUMENT_BOUNDS_RULE_MODELSPACE;
