@@ -16,23 +16,24 @@
 package org.kabeja.svg.generators;
 
 import java.util.Map;
+import org.kabeja.dxf.DXFAttdef;
 
-import org.kabeja.dxf.DXFAttrib;
 import org.kabeja.dxf.DXFEntity;
 import org.kabeja.math.TransformContext;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.SAXException;
 
-public class SVGAttribGenerator extends SVGTextGenerator {
+public class SVGAttdefGenerator extends SVGTextGenerator {
     /*
      * (non-Javadoc)
      *
      * @see de.miethxml.kabeja.svg.SVGGenerator#toSAX(org.xml.sax.ContentHandler)
      */
 
+    @Override
     public void toSAX(ContentHandler handler, Map svgContext, DXFEntity entity,
             TransformContext transformContext) throws SAXException {
-        DXFAttrib attrib = (DXFAttrib) entity;
+        DXFAttdef attrib = (DXFAttdef) entity;
 
         switch (attrib.getFlags()) {
             case 1:
