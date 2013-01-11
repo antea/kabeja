@@ -8,7 +8,7 @@
     <groupId>org.kabeja</groupId>
     <artifactId>kabeja</artifactId>
     <name>kabeja</name>
-    <version>0.4.4-SNAPSHOT</version>
+    <version>0.4.4</version>
     <packaging>jar</packaging>
     <description>Kabeja is a java library for parsing DXF and converting to SVG
 (dxf2svg). The library supports the SAX-api and can integrated
