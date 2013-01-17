@@ -63,10 +63,12 @@ public class MLineConverter {
             for (int x = 0; x < seg.getDXFMLineSegmentElementCount(); x++) {
                 DXFMLineSegmentElement segEl = seg.getDXFMLineSegmentElement(x);
                 double[] le = segEl.getLengthParameters();
-                Point s = miter.getPointAt(le[0]);
-                l.setStartPoint(s);
-                l.setDirectionVector(v);
-                pl[x].addVertex(new DXFVertex(l.getPointAt(le[1])));
+                if (le.length > 1) {
+                    Point s = miter.getPointAt(le[0]);
+                    l.setStartPoint(s);
+                    l.setDirectionVector(v);
+                    pl[x].addVertex(new DXFVertex(l.getPointAt(le[1])));
+                }
             }
         }
 
