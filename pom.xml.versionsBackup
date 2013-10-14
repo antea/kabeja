@@ -8,7 +8,7 @@
     <groupId>org.kabeja</groupId>
     <artifactId>kabeja</artifactId>
     <name>kabeja</name>
-    <version>0.4.5</version>
+    <version>0.4.5-SNAPSHOT</version>
     <packaging>jar</packaging>
     <description>Kabeja is a java library for parsing DXF and converting to SVG
 (dxf2svg). The library supports the SAX-api and can integrated
@@ -30,7 +30,7 @@ to jpeg, tiff, png and pdf are included.
         <repository>
             <id>m2</id>
             <name>Repository m2.antea.bogus</name>
-            <url>scpexe://maven.antea.bogus/srv/maven</url>
+            <url>scp://deployer@m2.antea.bogus/srv/maven</url>
         </repository>
     </distributionManagement>
 
@@ -98,14 +98,6 @@ to jpeg, tiff, png and pdf are included.
     </scm>
 
     <build>
-        <extensions>
-            <!-- Enabling the use of FTP -->
-            <extension>
-                <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-ssh-external</artifactId>
-                <version>2.5</version>
-            </extension>
-        </extensions>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>

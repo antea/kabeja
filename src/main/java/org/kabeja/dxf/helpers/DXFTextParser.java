@@ -485,7 +485,7 @@ public class DXFTextParser {
 
         case 'H':
 
-            if (value.endsWith("x")) {
+            if (value.toLowerCase().endsWith("x")) {
                 para.setFontHeight(para.getFontHeight() * Double.parseDouble(
                         value.substring(0, value.length() - 1)));
             } else {
@@ -500,7 +500,12 @@ public class DXFTextParser {
             break;
 
         case 'W':
-            para.setWidth(Double.parseDouble(value));
+            if (value.toLowerCase().endsWith("x")) {
+                para.setWidth(para.getWidth()* Double.parseDouble(
+                        value.substring(0, value.length() - 1)));
+            } else {
+                para.setWidth(Double.parseDouble(value));
+            }
 
             break;
 
