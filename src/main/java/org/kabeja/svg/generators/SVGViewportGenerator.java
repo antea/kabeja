@@ -155,7 +155,7 @@ public class SVGViewportGenerator extends AbstractSVGSAXGenerator {
                 double width = 0;
 
                 if (svgContext.containsKey(SVGContext.STROKE_WIDTH)) {
-                    Double lw = (Double) svgContext.get(SVGContext.LAYER_STROKE_WIDTH);
+                    Double lw = (Double) svgContext.get(SVGContext.STROKE_WIDTH);
                     width = lw.doubleValue() / zoomXP;
                 } else {
                     width = (viewBounds.getWidth() + viewBounds.getHeight()) / 2 * SVGConstants.DEFAULT_STROKE_WIDTH_PERCENT;
