@@ -87,6 +87,8 @@ public class SVGUtils {
 
     public static void addStrokeDashArrayAttribute(AttributesImpl attr,
         DXFLineType ltype, double scale) {
+        if ("true".equals(System.getProperty("kabeja.ignore.linetype")))
+            return;
         if (ltype != null) {
             double[] pattern = ltype.getPattern();
 
