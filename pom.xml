@@ -25,31 +25,6 @@ to jpeg, tiff, png and pdf are included.
     </issueManagement>
 
     <inceptionYear>2005</inceptionYear>
- 
-    <distributionManagement>
-        <repository>
-            <id>m2</id>
-            <name>Repository m2.antea.bogus</name>
-            <url>scpexe://maven.antea.bogus/srv/maven</url>
-        </repository>
-    </distributionManagement>
-
-   <repositories>
-        <!-- Repository condivisa Antea. -->
-        <repository>
-            <id>antea</id>
-            <name>Repository Aziendale Antea</name>
-            <url>http://m2.antea.bogus</url>
-            <releases>
-                <enabled>true</enabled>
-                <updatePolicy>never</updatePolicy>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </repository>
-    </repositories>
 
     <developers>
         <developer>
