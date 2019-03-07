@@ -15,38 +15,12 @@
  */
 package org.kabeja.svg;
 
+import org.kabeja.dxf.DXFConstants;
+import org.kabeja.svg.generators.*;
+
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-
-import org.kabeja.dxf.DXFConstants;
-import org.kabeja.svg.generators.SVG3DFaceGenerator;
-import org.kabeja.svg.generators.SVG3DSolidGenerator;
-import org.kabeja.svg.generators.SVGArcGenerator;
-import org.kabeja.svg.generators.SVGAttdefGenerator;
-import org.kabeja.svg.generators.SVGAttribGenerator;
-import org.kabeja.svg.generators.SVGCircleGenerator;
-import org.kabeja.svg.generators.SVGDimensionGenerator;
-import org.kabeja.svg.generators.SVGEllipseGenerator;
-import org.kabeja.svg.generators.SVGHatchGenerator;
-import org.kabeja.svg.generators.SVGImageGenerator;
-import org.kabeja.svg.generators.SVGInsertGenerator;
-import org.kabeja.svg.generators.SVGLWPolylineGenerator;
-import org.kabeja.svg.generators.SVGLeaderGenerator;
-import org.kabeja.svg.generators.SVGLineGenerator;
-import org.kabeja.svg.generators.SVGMLineGenerator;
-import org.kabeja.svg.generators.SVGMTextGenerator;
-import org.kabeja.svg.generators.SVGPointGenerator;
-import org.kabeja.svg.generators.SVGPolylineGenerator;
-import org.kabeja.svg.generators.SVGRayGenerator;
-import org.kabeja.svg.generators.SVGShapeGenerator;
-import org.kabeja.svg.generators.SVGSolidGenerator;
-import org.kabeja.svg.generators.SVGSplineGenerator;
-import org.kabeja.svg.generators.SVGTextGenerator;
-import org.kabeja.svg.generators.SVGToleranceGenerator;
-import org.kabeja.svg.generators.SVGTraceGenerator;
-import org.kabeja.svg.generators.SVGViewportGenerator;
-import org.kabeja.svg.generators.SVGXLineGenerator;
 
 public class SVGSAXGeneratorManager {
 
@@ -84,6 +58,8 @@ public class SVGSAXGeneratorManager {
         this.generators.put(DXFConstants.ENTITY_TYPE_ARC, new SVGArcGenerator());
         this.generators.put(DXFConstants.ENTITY_TYPE_ATTRIB, new SVGAttribGenerator());
         this.generators.put(DXFConstants.ENTITY_TYPE_ATTDEF, new SVGAttdefGenerator());
+
+        this.generators.put(DXFConstants.ENTITY_TYPE_BODY, new SVGBodyGenerator());
 
         this.generators.put(DXFConstants.ENTITY_TYPE_CIRCLE, new SVGCircleGenerator());
         this.generators.put(DXFConstants.ENTITY_TYPE_DIMENSION, new SVGDimensionGenerator());
