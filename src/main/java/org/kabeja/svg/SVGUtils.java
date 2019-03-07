@@ -4,13 +4,7 @@
  */
 package org.kabeja.svg;
 
-import java.io.File;
-import java.net.MalformedURLException;
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
-import java.util.Iterator;
 import org.apache.commons.lang.StringUtils;
-
 import org.kabeja.dxf.DXFLineType;
 import org.kabeja.dxf.helpers.StyledTextParagraph;
 import org.kabeja.dxf.helpers.TextDocument;
@@ -18,6 +12,12 @@ import org.xml.sax.Attributes;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.AttributesImpl;
+
+import java.io.File;
+import java.net.MalformedURLException;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Iterator;
 
 
 /**
@@ -34,8 +34,7 @@ public class SVGUtils {
     static {
         DecimalFormatSymbols symbols = new DecimalFormatSymbols();
         symbols.setDecimalSeparator('.');
-        format = new DecimalFormat("###.###################################",
-                symbols);
+        format = new DecimalFormat("###.####", symbols);
     }
 
     public static void startElement(ContentHandler handler, String element,
@@ -97,7 +96,9 @@ public class SVGUtils {
 
                 for (int i = 0; i < pattern.length; i++) {
                     if (pattern[i] != 0.0) {
-                        buf.append(format.format(Math.abs((pattern[i] * scale))));
+                        double v = Math.abs((pattern[i] * scale));
+                        v = Math.min(Math.max(v, 1f), 1000f);
+                        buf.append(format.format(v));
                     } else {
                         // that means a dot
                         buf.append("0.05%");
